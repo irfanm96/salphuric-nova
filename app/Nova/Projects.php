@@ -50,7 +50,10 @@ class Projects extends Resource
         $fields[] = BelongsTo::make('User')->rules('required');
         $fields[] = Text::make('Name');
         $fields[] = Text::make('Description');
-        $fields[] = Text::make('Domain');
+        $fields[] = Text::make('Domain')->displayUsing(function ($domain) {
+            return '<a href="' . $domain . '">' . $domain . '</a>';
+        })->asHtml();
+//        $fields[] = Text::make('Domain')->onlyOnIndex();
         $fields[] = Multiselect::make('Type')
             ->options([
                 'web' => 'Web',
@@ -58,7 +61,10 @@ class Projects extends Resource
                 'android' => 'Android',
                 'ios' => 'IOS',
             ])
-            ->placeholder('Choose type of the project')->rules('required');
+            ->placeholder('Choose type of the project')->rules('required')->onlyOnForms();
+        $fields[]=Text::make('Type')->displayUsing(function ($type){
+            return $type;
+        })->onlyOnDetail();
         $fields[] = Select::make('Status')->options([
             'pending' => 'Pending',
             'active' => 'Active',
@@ -66,7 +72,7 @@ class Projects extends Resource
             'deleted' => 'Deleted',
         ]);
 
-        $fields[]=HasMany::make('Project Products','projectProducts',ProjectProducts::class);
+        $fields[] = HasMany::make('Project Products', 'projectProducts', ProjectProducts::class);
 
         return $fields;
     }

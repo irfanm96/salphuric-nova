@@ -19,7 +19,7 @@ class CreateProjectsTable extends Migration
             $table->string('name');
             $table->longText('description')->nullable();
             $table->string('domain');
-            $table->json('type');
+            $table->string('type');
             $table->enum('domain_managed_by', ['client', 'admin'])->default('client');
             $table->enum('status', ['pending', 'active', 'terminated'])->default('pending');
             $table->timestamps();
