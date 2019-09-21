@@ -17,19 +17,6 @@ class SendEmail extends Action implements ShouldQueue
 {
     use InteractsWithQueue, Queueable, SerializesModels;
 
-    /**
-     * The name of the connection the job should be sent to.
-     *
-     * @var string|null
-     */
-    public $connection = 'redis';
-
-    /**
-     * The name of the queue the job should be sent to.
-     *
-     * @var string|null
-     */
-    public $queue = 'emails';
 
     /**
      * Perform the action on the given models.
