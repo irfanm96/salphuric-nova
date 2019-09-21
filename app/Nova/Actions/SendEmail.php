@@ -26,7 +26,11 @@ class SendEmail extends Action implements ShouldQueue
      */
     public function handle(ActionFields $fields, Collection $models)
     {
-        sleep(10);
+        foreach ($models as $model) {
+            sleep(10);
+            $this->markAsFinished($model);
+        }
+
         return ['Ok'];
     }
 
