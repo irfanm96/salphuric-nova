@@ -2,6 +2,7 @@
 
 namespace Salfade\Wizard;
 
+use Illuminate\View\View;
 use Laravel\Nova\Nova;
 use Laravel\Nova\Tool;
 
@@ -14,17 +15,19 @@ class Wizard extends Tool
      */
     public function boot()
     {
-        Nova::script('wizard', __DIR__.'/../dist/js/tool.js');
-        Nova::style('wizard', __DIR__.'/../dist/css/tool.css');
+        Nova::script('wizard', __DIR__ . '/../dist/js/tool.js');
+        Nova::style('wizard', __DIR__ . '/../dist/css/tool.css');
     }
 
     /**
      * Build the view that renders the navigation links for the tool.
      *
-     * @return \Illuminate\View\View
+     * @return View
      */
     public function renderNavigation()
     {
+//        return false;
         return view('wizard::navigation');
     }
+
 }
