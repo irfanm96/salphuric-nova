@@ -1,8 +1,14 @@
 <dropdown-trigger class="h-9 flex items-center" slot-scope="{toggle}" :handle-click="toggle">
+    <div class="flex-no-shrink ml-auto"><a
+            href="/dashboard/resources/users/new?viaResource=&amp;viaResourceId=&amp;viaRelationship="
+            class="btn btn-default btn-primary" dusk="create-button">
+            New Project
+        </a></div>
+
     @isset($user->email)
         <img
             src="https://secure.gravatar.com/avatar/{{ md5($user->email) }}?size=512"
-            class="rounded-full w-8 h-8 mr-3"
+            class="rounded-full w-8 h-8 mr-3 ml-3"
         />
     @endisset
 
