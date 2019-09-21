@@ -18,7 +18,8 @@
         "laravel/tinker": "^1.0",
         "optimistdigital/nova-multiselect-field": "^1.3",
         "spatie/laravel-permission": "^3.0",
-        "vyuldashev/nova-permission": "^2.1"
+        "vyuldashev/nova-permission": "^2.1",
+        "salfade/wizard": "*"
     },
     "require-dev": {
         "facade/ignition": "^1.4",
@@ -32,6 +33,10 @@
         {
             "type": "path",
             "url": "./nova"
+        },
+        {
+            "type": "path",
+            "url": "./nova-components/Wizard"
         }
     ],
     "config": {

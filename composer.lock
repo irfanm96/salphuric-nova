@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "237905c721a8a2338d394631d8fb5611",
+    "content-hash": "b455e8bdccd7261574c85e06e19bd983",
     "packages": [
         {
             "name": "cakephp/chronos",
@@ -2062,6 +2062,39 @@
                 "uuid"
             ],
             "time": "2018-07-19T23:38:55+00:00"
+        },
+        {
+            "name": "salfade/wizard",
+            "version": "dev-master",
+            "dist": {
+                "type": "path",
+                "url": "./nova-components/Wizard",
+                "reference": "7ce47204a26a78f426cc05bc890eefbdcaf9b252"
+            },
+            "require": {
+                "php": ">=7.1.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Salfade\\Wizard\\ToolServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Salfade\\Wizard\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "A Laravel Nova tool.",
+            "keywords": [
+                "laravel",
+                "nova"
+            ]
         },
         {
             "name": "spatie/laravel-permission",

@@ -2,6 +2,7 @@
 
 namespace App\Nova;
 
+use App\Category;
 use Laravel\Nova\Fields\Currency;
 use Laravel\Nova\Fields\ID;
 use Illuminate\Http\Request;
@@ -45,6 +46,15 @@ class Products extends Resource
     {
         $fields = [];
         $fields[] = ID::make()->sortable()->hideFromIndex();
+        $fields[] = Text::make('Category')->sortable()->onlyOnIndex();
+        $fields[] = Select::make('Category')->options([
+            'HOSTING' => 'Hosting',
+            'EMAIL' => 'Email',
+            'SSL' => 'SSL',
+            'BACKUP' => 'Back Up',
+            'ANALYTICS' => 'Analytics',
+            'SMS' => 'SMS'
+        ])->hideFromIndex()->rules('required');
         $fields[] = Text::make('Name')->sortable();
         $fields[] = Text::make('Slug')->hideFromIndex();
         $fields[] = Text::make('Description');

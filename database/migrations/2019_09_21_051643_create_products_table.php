@@ -1,5 +1,6 @@
 <?php
 
+use App\Category;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
@@ -21,6 +22,7 @@ class CreateProductsTable extends Migration
             $table->string('provider');
             $table->integer('quantity');
             $table->float('price_per_unit');
+            $table->string('category')->default(Category::HOSTING);
             $table->enum('frequency',['per_unit','daily','weekly','monthly','annually'])->default('monthly');
             $table->timestamps();
         });

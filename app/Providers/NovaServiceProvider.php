@@ -9,6 +9,7 @@ use Laravel\Nova\Nova;
 use Laravel\Nova\Cards\Help;
 use Illuminate\Support\Facades\Gate;
 use Laravel\Nova\NovaApplicationServiceProvider;
+use Salfade\Wizard\Wizard;
 use Vyuldashev\NovaPermission\NovaPermissionTool;
 
 class NovaServiceProvider extends NovaApplicationServiceProvider
@@ -83,8 +84,8 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
     {
         return [
             NovaPermissionTool::make(),
-            new LaravelNovaConfiguration()
-
+            new LaravelNovaConfiguration(),
+            new Wizard
         ];
     }
 
