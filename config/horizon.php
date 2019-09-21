@@ -143,7 +143,7 @@ return [
         'production' => [
             'supervisor-1' => [
                 'connection' => 'redis',
-                'queue' => ['default'],
+                'queue' => ['default', 'email'],
                 'balance' => 'simple',
                 'processes' => 10,
                 'tries' => 3,
