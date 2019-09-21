@@ -10,6 +10,7 @@ use Illuminate\Queue\SerializesModels;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Fields\Trix;
 
 class SendEmail extends Action implements ShouldQueue
@@ -38,7 +39,7 @@ class SendEmail extends Action implements ShouldQueue
     {
         return [
             Text::make('Subject'),
-            Trix::make('Body')
+            Textarea::make('Body')
         ];
     }
 }
