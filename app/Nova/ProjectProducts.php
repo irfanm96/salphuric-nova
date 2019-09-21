@@ -2,29 +2,26 @@
 
 namespace App\Nova;
 
-use Laravel\Nova\Fields\Currency;
+use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\ID;
 use Illuminate\Http\Request;
-use Laravel\Nova\Fields\Number;
-use Laravel\Nova\Fields\Select;
-use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
-class Products extends Resource
+class ProjectProducts extends Resource
 {
     /**
      * The model the resource corresponds to.
      *
      * @var string
      */
-    public static $model = 'App\Product';
+    public static $model = 'App\ProjectProduct';
 
     /**
      * The single value that should be used to represent the resource when being displayed.
      *
      * @var string
      */
-    public static $title = 'name';
+    public static $title = 'id';
 
     /**
      * The columns that should be searched.
@@ -35,6 +32,9 @@ class Products extends Resource
         'id',
     ];
 
+    public static $displayInNavigation=false;
+
+
     /**
      * Get the fields displayed by the resource.
      *
@@ -43,22 +43,14 @@ class Products extends Resource
      */
     public function fields(Request $request)
     {
+
         $fields = [];
-        $fields[] = ID::make()->sortable()->hideFromIndex();
-        $fields[] = Text::make('Name')->sortable();
-        $fields[] = Text::make('Slug')->hideFromIndex();
-        $fields[] = Text::make('Description');
-        $fields[] = Text::make('Provider');
-        $fields[] = Number::make('Quantity');
-        $fields[] = Currency::make('Price Per Unit')->format('%.2n')->rules('required');
-        $fields[] = Select::make('Frequency')->options([
-            'per_unit' => 'Per Unit',
-            'daily' => 'Daily',
-            'monthly' => 'monthly',
-            'annually' => 'annually',
-        ])->rules('required');
+        $fields[] = ID::make()->sortable();
+        $fields[] = BelongsTo::make('Project','project',Projects::class);
+        $fields[] = BelongsTo::make('Product','product',Products::class);
 
         return $fields;
+
     }
 
     /**

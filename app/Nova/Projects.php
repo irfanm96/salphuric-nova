@@ -2,29 +2,30 @@
 
 namespace App\Nova;
 
-use Laravel\Nova\Fields\Currency;
+use Laravel\Nova\Fields\BelongsTo;
+use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
 use Illuminate\Http\Request;
-use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
+use OptimistDigital\MultiselectField\Multiselect;
 
-class Products extends Resource
+class Projects extends Resource
 {
     /**
      * The model the resource corresponds to.
      *
      * @var string
      */
-    public static $model = 'App\Product';
+    public static $model = 'App\Project';
 
     /**
      * The single value that should be used to represent the resource when being displayed.
      *
      * @var string
      */
-    public static $title = 'name';
+    public static $title = 'domain';
 
     /**
      * The columns that should be searched.
@@ -43,20 +44,29 @@ class Products extends Resource
      */
     public function fields(Request $request)
     {
+
         $fields = [];
-        $fields[] = ID::make()->sortable()->hideFromIndex();
-        $fields[] = Text::make('Name')->sortable();
-        $fields[] = Text::make('Slug')->hideFromIndex();
-        $fields[] = Text::make('Description');
-        $fields[] = Text::make('Provider');
-        $fields[] = Number::make('Quantity');
-        $fields[] = Currency::make('Price Per Unit')->format('%.2n')->rules('required');
-        $fields[] = Select::make('Frequency')->options([
-            'per_unit' => 'Per Unit',
-            'daily' => 'Daily',
-            'monthly' => 'monthly',
-            'annually' => 'annually',
-        ])->rules('required');
+        $fields[] = ID::make()->sortable();
+        $fields[] = BelongsTo::make('User')->rules('required');
+        $fields[] = Text::make('name');
+        $fields[] = Text::make('description');
+        $fields[] = Text::make('domain');
+        $fields[] = Multiselect::make('type')
+            ->options([
+                'web' => 'Web',
+                'api' => 'API',
+                'android' => 'Android',
+                'ios' => 'IOS',
+            ])
+            ->placeholder('Choose type of the project')->rules('required');
+        $fields[] = Select::make('status')->options([
+            'pending' => 'Pending',
+            'active' => 'Active',
+            'terminated' => 'Terminated',
+            'deleted' => 'Deleted',
+        ]);
+
+        $fields[]=HasMany::make('Project Products','projectProducts',ProjectProducts::class);
 
         return $fields;
     }
