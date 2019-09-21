@@ -2,6 +2,7 @@
 
 namespace App\Nova;
 
+use App\Nova\Actions\SendEmail;
 use KABBOUCHI\NovaImpersonate\Impersonate;
 use Laravel\Nova\Fields\ID;
 use Illuminate\Http\Request;
@@ -115,6 +116,6 @@ class User extends Resource
      */
     public function actions(Request $request)
     {
-        return [];
+        return [new SendEmail];
     }
 }
