@@ -9,6 +9,7 @@ use Laravel\Nova\Nova;
 use Laravel\Nova\Cards\Help;
 use Illuminate\Support\Facades\Gate;
 use Laravel\Nova\NovaApplicationServiceProvider;
+use Themsaid\CashierTool\CashierTool;
 use Vyuldashev\NovaPermission\NovaPermissionTool;
 
 class NovaServiceProvider extends NovaApplicationServiceProvider
@@ -81,7 +82,10 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
     {
         return [
             NovaPermissionTool::make(),
-            new LaravelNovaConfiguration()
+            new LaravelNovaConfiguration(),
+            new CashierTool(),
+            new \Tightenco\NovaStripe\NovaStripe,
+
 
         ];
     }

@@ -10,6 +10,7 @@ use Laravel\Nova\Fields\MorphToMany;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Gravatar;
 use Laravel\Nova\Fields\Password;
+use Themsaid\CashierTool\CashierResourceTool;
 use Vyuldashev\NovaPermission\Permission;
 use Vyuldashev\NovaPermission\Role;
 
@@ -72,6 +73,8 @@ class User extends Resource
 
             MorphToMany::make('Roles', 'roles', Role::class),
             MorphToMany::make('Permissions', 'permissions', Permission::class),
+            CashierResourceTool::make()->onlyOnDetail()
+
         ];
     }
 
