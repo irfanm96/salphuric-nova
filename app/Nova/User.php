@@ -9,6 +9,7 @@ use Laravel\Nova\Fields\Country;
 use Laravel\Nova\Fields\ID;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\MorphToMany;
+use Laravel\Nova\Fields\Status;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Gravatar;
 use Laravel\Nova\Fields\Password;
@@ -73,10 +74,12 @@ class User extends Resource
                 'redirect_to' => '/dashboard'
             ]),
 
+
             Badge::make('Status')->map([
                 'terminated' => 'danger',
                 'active' => 'success',
             ]),
+
 
             Country::make('Country', 'country'),
 
