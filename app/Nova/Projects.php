@@ -2,6 +2,7 @@
 
 namespace App\Nova;
 
+use App\Nova\Actions\StartSubscription;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
@@ -66,7 +67,7 @@ class Projects extends Resource
             'deleted' => 'Deleted',
         ]);
 
-        $fields[]=HasMany::make('Project Products','projectProducts',ProjectProducts::class);
+        $fields[] = HasMany::make('Project Products', 'projectProducts', ProjectProducts::class);
 
         return $fields;
     }
@@ -112,6 +113,6 @@ class Projects extends Resource
      */
     public function actions(Request $request)
     {
-        return [];
+        return [new StartSubscription];
     }
 }

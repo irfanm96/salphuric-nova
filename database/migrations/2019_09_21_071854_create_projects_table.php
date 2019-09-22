@@ -22,6 +22,7 @@ class CreateProjectsTable extends Migration
             $table->json('type');
             $table->enum('domain_managed_by', ['client', 'admin'])->default('client');
             $table->enum('status', ['pending', 'active', 'terminated'])->default('pending');
+            $table->enum('billing', ['monthly', 'annually'])->default('monthly');
             $table->timestamps();
         });
     }
