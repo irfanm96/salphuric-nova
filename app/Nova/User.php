@@ -5,6 +5,7 @@ namespace App\Nova;
 use App\Nova\Actions\SendEmail;
 use KABBOUCHI\NovaImpersonate\Impersonate;
 use Laravel\Nova\Fields\Badge;
+use Laravel\Nova\Fields\Country;
 use Laravel\Nova\Fields\ID;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\MorphToMany;
@@ -76,6 +77,8 @@ class User extends Resource
                 'terminated' => 'danger',
                 'active' => 'success',
             ]),
+
+            Country::make('Country', 'country'),
 
             MorphToMany::make('Roles', 'roles', Role::class),
             MorphToMany::make('Permissions', 'permissions', Permission::class),
