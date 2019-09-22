@@ -4,6 +4,7 @@ namespace App\Nova;
 
 use App\Nova\Actions\SendEmail;
 use KABBOUCHI\NovaImpersonate\Impersonate;
+use Laravel\Nova\Fields\Badge;
 use Laravel\Nova\Fields\ID;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\MorphToMany;
@@ -69,6 +70,11 @@ class User extends Resource
 
             Impersonate::make($this)->withMeta([
                 'redirect_to' => '/dashboard'
+            ]),
+
+            Badge::make('Status')->map([
+                'terminated' => 'danger',
+                'active' => 'success',
             ]),
 
             MorphToMany::make('Roles', 'roles', Role::class),
