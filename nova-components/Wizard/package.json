@@ -18,7 +18,9 @@
         "@fortawesome/free-solid-svg-icons": "^5.11.1",
         "@fortawesome/vue-fontawesome": "^0.1.7",
         "element-ui": "^2.12.0",
+        "jquery-ui": "^1.12.1",
         "vue": "^2.5.0",
+        "vue-custom-range-slider": "^0.2.1",
         "vue-form-wizard": "^0.8.4",
         "vue-multiselect": "^2.1.6"
     }

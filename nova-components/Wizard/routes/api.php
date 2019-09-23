@@ -1,5 +1,6 @@
 <?php
 
+use App\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -14,6 +15,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/endpoint', function (Request $request) {
-//     //
-// });
+Route::get('/email', function (Request $request) {
+    $query = Product::select('name as label', 'description as value')->where('category', '=', 'Email')->get();
+    return $query;
+});
+
+Route::get('/sms', function (Request $request) {
+    $query = Product::select('name as label', 'description as value')->where('category', '=', 'SMS')->get();
+    return $query;
+});

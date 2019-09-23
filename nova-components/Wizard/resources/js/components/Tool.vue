@@ -123,7 +123,7 @@
                                                 <h1 class="text-lg font-medium uppercase p-3 pb-0 text-center tracking-wide">
                                                     Hobby
                                                 </h1>
-<!--                                                <h2 class="text-sm text-gray-500 text-center pb-6">FREE</h2>-->
+                                                <!--                                                <h2 class="text-sm text-gray-500 text-center pb-6">FREE</h2>-->
 
                                                 Stripe offers everything needed to run an online business
                                                 at scale. Get in touch for details.
@@ -165,7 +165,8 @@
                                                                 <polyline points="22 4 12 14.01 9 11.01"></polyline>
                                                             </svg>
                                                         </div>
-                                                        <span class="text-gray-700 text-sm ml-3">1000 transaction Emails</span>
+                                                        <span
+                                                            class="text-gray-700 text-sm ml-3">1000 transaction Emails</span>
                                                     </li>
                                                     <li class="flex items-center">
                                                         <div class=" rounded-full p-2 fill-current text-green-700">
@@ -260,7 +261,8 @@
                                                 </ul>
                                             </div>
                                             <div class="block flex items-center p-8  uppercase">
-                                                <button class="mt-3 text-lg font-semibold bg-black w-full text-white rounded-lg px-6 py-3 block shadow-xl hover:bg-gray-700">
+                                                <button
+                                                    class="mt-3 text-lg font-semibold bg-black w-full text-white rounded-lg px-6 py-3 block shadow-xl hover:bg-gray-700">
                                                     Select
                                                 </button>
                                             </div>
@@ -318,7 +320,8 @@
                                                             <polyline points="22 4 12 14.01 9 11.01"></polyline>
                                                         </svg>
                                                     </div>
-                                                    <span class="text-gray-700 text-sm ml-3">2500 transaction Emails</span>
+                                                    <span
+                                                        class="text-gray-700 text-sm ml-3">2500 transaction Emails</span>
                                                 </li>
                                                 <li class="flex items-center">
                                                     <div class=" rounded-full p-2 fill-current text-green-700">
@@ -415,7 +418,8 @@
                                         </div>
 
                                         <div class="block flex items-center p-8  uppercase">
-                                            <button class="mt-3 text-lg font-semibold bg-black w-full text-white rounded-lg px-6 py-3 block shadow-xl hover:bg-gray-700">
+                                            <button
+                                                class="mt-3 text-lg font-semibold bg-black w-full text-white rounded-lg px-6 py-3 block shadow-xl hover:bg-gray-700">
                                                 Select
                                             </button>
                                         </div>
@@ -469,7 +473,8 @@
                                                                 <polyline points="22 4 12 14.01 9 11.01"></polyline>
                                                             </svg>
                                                         </div>
-                                                        <span class="text-gray-700 text-sm ml-3">5000 transaction Emails</span>
+                                                        <span
+                                                            class="text-gray-700 text-sm ml-3">5000 transaction Emails</span>
                                                     </li>
                                                     <li class="flex items-center">
                                                         <div class=" rounded-full p-2 fill-current text-green-700">
@@ -523,7 +528,8 @@
                                                                 <polyline points="22 4 12 14.01 9 11.01"></polyline>
                                                             </svg>
                                                         </div>
-                                                        <span class="text-gray-700 text-sm ml-3">Push Notifications</span>
+                                                        <span
+                                                            class="text-gray-700 text-sm ml-3">Push Notifications</span>
                                                     </li>
                                                     <li class="flex items-center">
                                                         <div class=" rounded-full p-2 fill-current text-green-700">
@@ -634,6 +640,50 @@
                             </div>
                         </div>
                     </section>
+                    <section v-else>
+
+
+                        <div class="card">
+                            <div class="border-b border-40">
+                                <div class="w-full flex border-b border-40">
+                                    <div class="w-1/5 px-8 py-6 my-auto">
+                                        <label class="inline-block text-80 pt-2 leading-tight">
+                                            Email Subscriptions
+                                        </label>
+                                    </div>
+                                    <div class="py-6 px-8 w-4/5">
+
+                                        <div>
+                                            <custom-slider :values="emailSliderValues" raising v-model="emailSlider"/>
+                                            {{ emailSlider }}
+                                        </div>
+                                        <!---->
+                                        <div class="help-text help-text mt-2"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="border-b border-40">
+                                <div class="w-full flex border-b border-40">
+                                    <div class="w-1/5 px-8 py-6 my-auto">
+                                        <label class="inline-block text-80 pt-2 leading-tight">
+                                            SMS Subscriptions
+                                        </label>
+                                    </div>
+                                    <div class="py-6 px-8 w-4/5">
+
+                                        <div>
+                                            <custom-slider :values="smsSliderValues" raising v-model="smsSlider"/>
+                                            {{ smsSlider }}
+                                        </div>
+                                        <!---->
+                                        <div class="help-text help-text mt-2"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </section>
+
 
                 </tab-content>
 
@@ -641,7 +691,8 @@
                     <div class=wizard-footer-left>
                        <span role="button" tabindex="0">
                            <button tabindex="-1" type="button" class="wizard-btn"
-                                   style="background-color: rgb(155, 89, 182); border-color: rgb(155, 89, 182); color: white;" @click.prevent="props.prevTab">Back</button>
+                                   style="background-color: rgb(155, 89, 182); border-color: rgb(155, 89, 182); color: white;"
+                                   @click.prevent="props.prevTab">Back</button>
                        </span>
                     </div>
                 </template>
@@ -653,10 +704,6 @@
 </template>
 <style scoped src="vue-multiselect/dist/vue-multiselect.min.css"></style>
 <style scoped>
-    .finish-button {
-        background-color: #43A047 !important;
-        border-color: #43A047 !important;
-    }
 
     /* The container */
     .cont {
@@ -730,6 +777,10 @@
 </style>
 <script>
 
+    import CustomSlider from "vue-custom-range-slider";
+    // import the styling, css or scss
+    // import "vue-custom-range-slider/dist/vue-custom-range-slider.css";
+
     import Multiselect from 'vue-multiselect'
 
     // import 'vue-form-wizard/dist/vue-form-wizard.min.css';
@@ -739,7 +790,8 @@
         components: {
             FormWizard,
             TabContent,
-            Multiselect
+            Multiselect,
+            CustomSlider
         },
         data() {
             return {
@@ -754,16 +806,89 @@
                     domain: '',
                     type: ''
                 },
-                mode: 'quick'
+                mode: 'quick',
+                emailSlider: "a",
+                emailSliderValues: [
+                    {
+                        label: "Not at all",
+                        value: "a"
+                    },
+                    {
+                        label: "A tiny bit",
+                        value: "b"
+                    },
+                    {
+                        label: "Its ok",
+                        value: "c"
+                    },
+                    {
+                        label: "Its very good",
+                        value: "d"
+                    },
+                    {
+                        label: "Its AMAZING!",
+                        value: "e"
+                    }],
+                smsSlider: "a",
+                smsSliderValues: [
+                    {
+                        label: "Not at all",
+                        value: "a"
+                    },
+                    {
+                        label: "A tiny bit",
+                        value: "b"
+                    },
+                    {
+                        label: "Its ok",
+                        value: "c"
+                    },
+                    {
+                        label: "Its very good",
+                        value: "d"
+                    },
+                    {
+                        label: "Its AMAZING!",
+                        value: "e"
+                    }],
             }
         },
-
         computed: {
             isQuick: function () {
                 return this.mode === 'quick';
             }
         },
+        mounted() {
+            this.fetchEmailSubscriptions();
+            this.fetchSmsSubscriptions();
+        },
         methods: {
+
+            fetchEmailSubscriptions() {
+                Nova.request().get('/nova-vendor/wizard/email')
+                    .then(data => {
+                       this.emailSliderValues=data.data;
+                       this.emailSlider=data.data[0].value;
+                        // console.log(data.data);
+                    }).catch(d => {
+
+                    console.log("error ");
+
+                });
+            },
+            fetchSmsSubscriptions() {
+                Nova.request().get('/nova-vendor/wizard/sms')
+                    .then(data => {
+                        this.smsSliderValues=data.data;
+                        this.smsSlider=data.data[0].value;
+                        // console.log(this.smsSliderValues);
+                    }).catch(d => {
+
+                    console.log("error ");
+
+                });
+            },
+
 
             handleProjectMode(btn) {
                 this.mode = btn;
@@ -771,7 +896,7 @@
             },
 
             onComplete: function () {
-                this.$toasted.show('Congrats Your Project has been created!', { type: 'success' })
+                this.$toasted.show('Congrats Your Project has been created!', {type: 'success'})
             }
             ,
             beforeTabSwitch: function () {
