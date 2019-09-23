@@ -2,6 +2,7 @@
 
 namespace App\Nova;
 
+use App\Nova\Actions\StartSubscription;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
@@ -118,6 +119,6 @@ class Projects extends Resource
      */
     public function actions(Request $request)
     {
-        return [];
+        return [new StartSubscription];
     }
 }

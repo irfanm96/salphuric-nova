@@ -23,6 +23,7 @@ class UsersTableSeeder extends Seeder
             'email' => 'fawzanm@gmail.com',
             'password' => bcrypt('secret'),
             'email_verified_at' => now(),
+            'country' => 'LK'
         ])->assignRole('super-admin');
 
 
@@ -31,8 +32,11 @@ class UsersTableSeeder extends Seeder
             'email' => 'irfanmm96@gmail.com',
             'password' => bcrypt('secret'),
             'email_verified_at' => now(),
+            'country' => 'LK'
         ])->assignRole('super-admin');
 
-        factory(User::class, 100)->create();
+
+        factory(User::class, 20)->create();
+
     }
 }

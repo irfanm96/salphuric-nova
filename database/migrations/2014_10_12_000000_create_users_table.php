@@ -20,6 +20,9 @@ class CreateUsersTable extends Migration
             $table->string('google_id')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->enum('status', ['active', 'hold', 'deleted', 'terminated']);
+            $table->string('country', 7);
+            $table->softDeletes();
             $table->rememberToken();
             $table->timestamps();
         });

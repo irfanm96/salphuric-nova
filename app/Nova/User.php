@@ -2,13 +2,18 @@
 
 namespace App\Nova;
 
+use App\Nova\Actions\SendEmail;
 use KABBOUCHI\NovaImpersonate\Impersonate;
+use Laravel\Nova\Fields\Badge;
+use Laravel\Nova\Fields\Country;
 use Laravel\Nova\Fields\ID;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\MorphToMany;
+use Laravel\Nova\Fields\Status;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Gravatar;
 use Laravel\Nova\Fields\Password;
+use Themsaid\CashierTool\CashierResourceTool;
 use Vyuldashev\NovaPermission\Permission;
 use Vyuldashev\NovaPermission\Role;
 
@@ -69,8 +74,19 @@ class User extends Resource
                 'redirect_to' => '/dashboard'
             ]),
 
+
+            Badge::make('Status')->map([
+                'terminated' => 'danger',
+                'active' => 'success',
+            ]),
+
+
+            Country::make('Country', 'country'),
+
             MorphToMany::make('Roles', 'roles', Role::class),
             MorphToMany::make('Permissions', 'permissions', Permission::class),
+            CashierResourceTool::make()->onlyOnDetail()
+
         ];
     }
 
@@ -115,6 +131,6 @@ class User extends Resource
      */
     public function actions(Request $request)
     {
-        return [];
+        return [new SendEmail];
     }
 }

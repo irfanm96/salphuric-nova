@@ -10,6 +10,7 @@ use Laravel\Nova\Cards\Help;
 use Illuminate\Support\Facades\Gate;
 use Laravel\Nova\NovaApplicationServiceProvider;
 use Salfade\Wizard\Wizard;
+use Themsaid\CashierTool\CashierTool;
 use Vyuldashev\NovaPermission\NovaPermissionTool;
 
 class NovaServiceProvider extends NovaApplicationServiceProvider
@@ -47,9 +48,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
     protected function gate()
     {
         Gate::define('viewNova', function ($user) {
-            return in_array($user->email, [
-                //
-            ]);
+            return true;
         });
     }
 
@@ -85,7 +84,11 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
         return [
             NovaPermissionTool::make(),
             new LaravelNovaConfiguration(),
-            new Wizard
+            new CashierTool(),
+            new \Tightenco\NovaStripe\NovaStripe,
+            new Wizard(),
+
+
         ];
     }
 
