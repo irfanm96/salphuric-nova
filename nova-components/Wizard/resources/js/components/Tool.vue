@@ -106,7 +106,7 @@
                         <div class="flex w-full container mx-auto">
                             <div class="w-full">
                                 <div class="bg-white items-center justify-center">
-                                    <h2 class="text-center">Pricing Schemes</h2>
+                                    <h2 class="text-center">Pick a Plan</h2>
                                 </div>
                                 <div class="relative block flex items-center">
                                     <div class="w-1/3  sm:my-5 my-8 relative z-0 rounded-lg shadow-lg md:-mr-4">
@@ -117,7 +117,7 @@
                                                 <h1 class="text-lg font-medium uppercase p-3 pb-0 text-center tracking-wide">
                                                     Hobby
                                                 </h1>
-                                                <h2 class="text-sm text-gray-500 text-center pb-6">FREE</h2>
+<!--                                                <h2 class="text-sm text-gray-500 text-center pb-6">FREE</h2>-->
 
                                                 Stripe offers everything needed to run an online business
                                                 at scale. Get in touch for details.
@@ -133,7 +133,7 @@
                                                                 height="24"
                                                                 viewBox="0 0 24 24"
                                                                 fill="none"
-                                                                stroke="currentColor"
+                                                                stroke="green"
                                                                 stroke-width="2"
                                                                 stroke-linecap="round"
                                                                 stroke-linejoin="round">
@@ -141,7 +141,7 @@
                                                                 <polyline points="22 4 12 14.01 9 11.01"></polyline>
                                                             </svg>
                                                         </div>
-                                                        <span class="text-gray-700 text-lg ml-3">No setup</span>
+                                                        <span class="text-gray-700 text-sm ml-3">1GB / 1 CPU, 25GB SSD Disk, 1000GB Transfer</span>
                                                     </li>
                                                     <li class="flex items-center">
                                                         <div class=" rounded-full p-2 fill-current text-green-700">
@@ -151,7 +151,7 @@
                                                                 height="24"
                                                                 viewBox="0 0 24 24"
                                                                 fill="none"
-                                                                stroke="currentColor"
+                                                                stroke="green"
                                                                 stroke-width="2"
                                                                 stroke-linecap="round"
                                                                 stroke-linejoin="round">
@@ -159,9 +159,7 @@
                                                                 <polyline points="22 4 12 14.01 9 11.01"></polyline>
                                                             </svg>
                                                         </div>
-                                                        <span class="text-gray-700 text-lg ml-3"
-                                                        >No setups</span
-                                                        >
+                                                        <span class="text-gray-700 text-sm ml-3">1000 transaction Emails</span>
                                                     </li>
                                                     <li class="flex items-center">
                                                         <div class=" rounded-full p-2 fill-current text-green-700">
@@ -171,7 +169,7 @@
                                                                 height="24"
                                                                 viewBox="0 0 24 24"
                                                                 fill="none"
-                                                                stroke="currentColor"
+                                                                stroke="green"
                                                                 stroke-width="2"
                                                                 stroke-linecap="round"
                                                                 stroke-linejoin="round">
@@ -179,14 +177,84 @@
                                                                 <polyline points="22 4 12 14.01 9 11.01"></polyline>
                                                             </svg>
                                                         </div>
-                                                        <span class="text-gray-700 text-lg ml-3">Speed</span>
+                                                        <span class="text-gray-700 text-sm ml-3">SSL</span>
+                                                    </li>
+                                                    <li class="flex items-center">
+                                                        <div class=" rounded-full p-2 fill-current text-green-700">
+                                                            <svg
+                                                                class="w-6 h-6 align-middle"
+                                                                width="24"
+                                                                height="24"
+                                                                viewBox="0 0 24 24"
+                                                                fill="none"
+                                                                stroke="green"
+                                                                stroke-width="2"
+                                                                stroke-linecap="round"
+                                                                stroke-linejoin="round">
+                                                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                                                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                                                            </svg>
+                                                        </div>
+                                                        <span class="text-gray-700 text-sm ml-3">Weekly Backup</span>
+                                                    </li>
+                                                    <li class="flex items-center">
+                                                        <div class=" rounded-full p-2 fill-current text-green-700">
+                                                            <svg
+                                                                class="w-6 h-6 align-middle"
+                                                                width="24"
+                                                                height="24"
+                                                                viewBox="0 0 24 24"
+                                                                fill="none"
+                                                                stroke="green"
+                                                                stroke-width="2"
+                                                                stroke-linecap="round"
+                                                                stroke-linejoin="round">
+                                                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                                                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                                                            </svg>
+                                                        </div>
+                                                        <span class="text-gray-700 text-sm ml-3">Analytics</span>
+                                                    </li>
+                                                    <li class="flex items-center">
+                                                        <div class=" rounded-full p-2 fill-current text-green-700">
+                                                            <svg
+                                                                class="w-6 h-6 align-middle"
+                                                                width="24"
+                                                                height="24"
+                                                                viewBox="0 0 24 24"
+                                                                fill="none"
+                                                                stroke="green"
+                                                                stroke-width="2"
+                                                                stroke-linecap="round"
+                                                                stroke-linejoin="round">
+                                                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                                                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                                                            </svg>
+                                                        </div>
+                                                        <span class="text-gray-700 text-sm ml-3">Domain</span>
+                                                    </li>
+                                                    <li class="flex items-center">
+                                                        <div class=" rounded-full p-2 fill-current text-green-700">
+                                                            <svg
+                                                                class="w-6 h-6 align-middle"
+                                                                width="24"
+                                                                height="24"
+                                                                viewBox="0 0 24 24"
+                                                                fill="none"
+                                                                stroke="green"
+                                                                stroke-width="2"
+                                                                stroke-linecap="round"
+                                                                stroke-linejoin="round">
+                                                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                                                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                                                            </svg>
+                                                        </div>
+                                                        <span class="text-gray-700 text-sm ml-3">GSuite</span>
                                                     </li>
                                                 </ul>
                                             </div>
                                             <div class="block flex items-center p-8  uppercase">
-                                                <button class="mt-3 text-lg font-semibold
-	bg-black w-full text-white rounded-lg
-	px-6 py-3 block shadow-xl hover:bg-gray-700">
+                                                <button class="mt-3 text-lg font-semibold bg-black w-full text-white rounded-lg px-6 py-3 block shadow-xl hover:bg-gray-700">
                                                     Select
                                                 </button>
                                             </div>
@@ -200,7 +268,7 @@
                                         <div
                                             class="block text-left text-sm sm:text-md max-w-sm mx-auto mt-2 text-black px-8 lg:px-6">
                                             <h1 class="text-lg font-medium uppercase p-3 pb-0 text-center tracking-wide">
-                                                Expert
+                                                Growth
                                             </h1>
                                             <h2 class="text-sm text-gray-500 text-center pb-6"><span class="text-3xl">€19</span>
                                                 /mo</h2>
@@ -211,15 +279,14 @@
                                         <div class="flex pl-12 justify-start sm:justify-start mt-3">
                                             <ul>
                                                 <li class="flex items-center">
-                                                    <div
-                                                        class="rounded-full p-2 fill-current text-green-700">
+                                                    <div class=" rounded-full p-2 fill-current text-green-700">
                                                         <svg
                                                             class="w-6 h-6 align-middle"
                                                             width="24"
                                                             height="24"
                                                             viewBox="0 0 24 24"
                                                             fill="none"
-                                                            stroke="currentColor"
+                                                            stroke="green"
                                                             stroke-width="2"
                                                             stroke-linecap="round"
                                                             stroke-linejoin="round">
@@ -227,7 +294,7 @@
                                                             <polyline points="22 4 12 14.01 9 11.01"></polyline>
                                                         </svg>
                                                     </div>
-                                                    <span class="text-gray-700 text-lg ml-3">No setup</span>
+                                                    <span class="text-gray-700 text-sm ml-3">2GB / 1 CPU, 50GB SSD Disk,   2TB Transfer</span>
                                                 </li>
                                                 <li class="flex items-center">
                                                     <div class=" rounded-full p-2 fill-current text-green-700">
@@ -237,7 +304,7 @@
                                                             height="24"
                                                             viewBox="0 0 24 24"
                                                             fill="none"
-                                                            stroke="currentColor"
+                                                            stroke="green"
                                                             stroke-width="2"
                                                             stroke-linecap="round"
                                                             stroke-linejoin="round">
@@ -245,9 +312,7 @@
                                                             <polyline points="22 4 12 14.01 9 11.01"></polyline>
                                                         </svg>
                                                     </div>
-                                                    <span class="text-gray-700 text-lg ml-3"
-                                                    >Hidden fees</span
-                                                    >
+                                                    <span class="text-gray-700 text-sm ml-3">2500 transaction Emails</span>
                                                 </li>
                                                 <li class="flex items-center">
                                                     <div class=" rounded-full p-2 fill-current text-green-700">
@@ -257,7 +322,7 @@
                                                             height="24"
                                                             viewBox="0 0 24 24"
                                                             fill="none"
-                                                            stroke="currentColor"
+                                                            stroke="green"
                                                             stroke-width="2"
                                                             stroke-linecap="round"
                                                             stroke-linejoin="round">
@@ -265,15 +330,86 @@
                                                             <polyline points="22 4 12 14.01 9 11.01"></polyline>
                                                         </svg>
                                                     </div>
-                                                    <span class="text-gray-700 text-lg ml-3">Original</span>
+                                                    <span class="text-gray-700 text-sm ml-3">SSL</span>
+                                                </li>
+                                                <li class="flex items-center">
+                                                    <div class=" rounded-full p-2 fill-current text-green-700">
+                                                        <svg
+                                                            class="w-6 h-6 align-middle"
+                                                            width="24"
+                                                            height="24"
+                                                            viewBox="0 0 24 24"
+                                                            fill="none"
+                                                            stroke="green"
+                                                            stroke-width="2"
+                                                            stroke-linecap="round"
+                                                            stroke-linejoin="round">
+                                                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                                                        </svg>
+                                                    </div>
+                                                    <span class="text-gray-700 text-sm ml-3">Daily Backup</span>
+                                                </li>
+                                                <li class="flex items-center">
+                                                    <div class=" rounded-full p-2 fill-current text-green-700">
+                                                        <svg
+                                                            class="w-6 h-6 align-middle"
+                                                            width="24"
+                                                            height="24"
+                                                            viewBox="0 0 24 24"
+                                                            fill="none"
+                                                            stroke="green"
+                                                            stroke-width="2"
+                                                            stroke-linecap="round"
+                                                            stroke-linejoin="round">
+                                                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                                                        </svg>
+                                                    </div>
+                                                    <span class="text-gray-700 text-sm ml-3">Analytics</span>
+                                                </li>
+                                                <li class="flex items-center">
+                                                    <div class=" rounded-full p-2 fill-current text-green-700">
+                                                        <svg
+                                                            class="w-6 h-6 align-middle"
+                                                            width="24"
+                                                            height="24"
+                                                            viewBox="0 0 24 24"
+                                                            fill="none"
+                                                            stroke="green"
+                                                            stroke-width="2"
+                                                            stroke-linecap="round"
+                                                            stroke-linejoin="round">
+                                                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                                                        </svg>
+                                                    </div>
+                                                    <span class="text-gray-700 text-sm ml-3">Domain</span>
+                                                </li>
+                                                <li class="flex items-center">
+                                                    <div class=" rounded-full p-2 fill-current text-green-700">
+                                                        <svg
+                                                            class="w-6 h-6 align-middle"
+                                                            width="24"
+                                                            height="24"
+                                                            viewBox="0 0 24 24"
+                                                            fill="none"
+                                                            stroke="green"
+                                                            stroke-width="2"
+                                                            stroke-linecap="round"
+                                                            stroke-linejoin="round">
+                                                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                                                        </svg>
+                                                    </div>
+                                                    <span class="text-gray-700 text-sm ml-3">GSuite</span>
                                                 </li>
                                             </ul>
+
                                         </div>
 
                                         <div class="block flex items-center p-8  uppercase">
-                                            <button class="mt-3 text-lg font-semibold
-	bg-black w-full text-white rounded-lg
-	px-6 py-3 block shadow-xl hover:bg-gray-700">
+                                            <button class="mt-3 text-lg font-semibold bg-black w-full text-white rounded-lg px-6 py-3 block shadow-xl hover:bg-gray-700">
                                                 Select
                                             </button>
                                         </div>
@@ -284,7 +420,7 @@
                                             <div
                                                 class="block text-left text-sm sm:text-md max-w-sm mx-auto mt-2 text-black px-8 lg:px-6">
                                                 <h1 class="text-lg font-medium uppercase p-3 pb-0 text-center tracking-wide">
-                                                    Enteprise
+                                                    Business
                                                 </h1>
                                                 <h2 class="text-sm text-gray-500 text-center pb-6">€39 /mo</h2>
 
@@ -301,7 +437,7 @@
                                                                 height="24"
                                                                 viewBox="0 0 24 24"
                                                                 fill="none"
-                                                                stroke="currentColor"
+                                                                stroke="green"
                                                                 stroke-width="2"
                                                                 stroke-linecap="round"
                                                                 stroke-linejoin="round">
@@ -309,65 +445,172 @@
                                                                 <polyline points="22 4 12 14.01 9 11.01"></polyline>
                                                             </svg>
                                                         </div>
-                                                        <span class="text-gray-700 text-lg ml-3"
-                                                        >Electric</span
-                                                        >
+                                                        <span class="text-gray-700 text-sm ml-3">3GB / 1 CPU, 60GB SSD Disk, 3TB Transfer</span>
                                                     </li>
                                                     <li class="flex items-center">
-                                                        <div
-                                                            class=" rounded-full p-2 fill-current text-green-700"
-                                                        >
+                                                        <div class=" rounded-full p-2 fill-current text-green-700">
                                                             <svg
                                                                 class="w-6 h-6 align-middle"
                                                                 width="24"
                                                                 height="24"
                                                                 viewBox="0 0 24 24"
                                                                 fill="none"
-                                                                stroke="currentColor"
+                                                                stroke="green"
                                                                 stroke-width="2"
                                                                 stroke-linecap="round"
-                                                                stroke-linejoin="round"
-                                                            >
-                                                                <path
-                                                                    d="M22 11.08V12a10 10 0 1 1-5.93-9.14"
-                                                                ></path>
-                                                                <polyline
-                                                                    points="22 4 12 14.01 9 11.01"
-                                                                ></polyline>
+                                                                stroke-linejoin="round">
+                                                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                                                <polyline points="22 4 12 14.01 9 11.01"></polyline>
                                                             </svg>
                                                         </div>
-                                                        <span class="text-gray-700 text-lg ml-3"
-                                                        >Monthly</span
-                                                        >
+                                                        <span class="text-gray-700 text-sm ml-3">5000 transaction Emails</span>
                                                     </li>
                                                     <li class="flex items-center">
-                                                        <div
-                                                            class=" rounded-full p-2 fill-current text-green-700"
-                                                        >
+                                                        <div class=" rounded-full p-2 fill-current text-green-700">
                                                             <svg
                                                                 class="w-6 h-6 align-middle"
                                                                 width="24"
                                                                 height="24"
                                                                 viewBox="0 0 24 24"
                                                                 fill="none"
-                                                                stroke="currentColor"
+                                                                stroke="green"
                                                                 stroke-width="2"
                                                                 stroke-linecap="round"
-                                                                stroke-linejoin="round"
-                                                            >
-                                                                <path
-                                                                    d="M22 11.08V12a10 10 0 1 1-5.93-9.14"
-                                                                ></path>
-                                                                <polyline
-                                                                    points="22 4 12 14.01 9 11.01"
-                                                                ></polyline>
+                                                                stroke-linejoin="round">
+                                                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                                                <polyline points="22 4 12 14.01 9 11.01"></polyline>
                                                             </svg>
                                                         </div>
-                                                        <span class="text-gray-700 text-lg ml-3"
-                                                        >No setup</span
-                                                        >
+                                                        <span class="text-gray-700 text-sm ml-3">SSL</span>
+                                                    </li>
+                                                    <li class="flex items-center">
+                                                        <div class=" rounded-full p-2 fill-current text-green-700">
+                                                            <svg
+                                                                class="w-6 h-6 align-middle"
+                                                                width="24"
+                                                                height="24"
+                                                                viewBox="0 0 24 24"
+                                                                fill="none"
+                                                                stroke="green"
+                                                                stroke-width="2"
+                                                                stroke-linecap="round"
+                                                                stroke-linejoin="round">
+                                                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                                                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                                                            </svg>
+                                                        </div>
+                                                        <span class="text-gray-700 text-sm ml-3">Daily Backup</span>
+                                                    </li>
+                                                    <li class="flex items-center">
+                                                        <div class=" rounded-full p-2 fill-current text-green-700">
+                                                            <svg
+                                                                class="w-6 h-6 align-middle"
+                                                                width="24"
+                                                                height="24"
+                                                                viewBox="0 0 24 24"
+                                                                fill="none"
+                                                                stroke="green"
+                                                                stroke-width="2"
+                                                                stroke-linecap="round"
+                                                                stroke-linejoin="round">
+                                                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                                                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                                                            </svg>
+                                                        </div>
+                                                        <span class="text-gray-700 text-sm ml-3">Push Notifications</span>
+                                                    </li>
+                                                    <li class="flex items-center">
+                                                        <div class=" rounded-full p-2 fill-current text-green-700">
+                                                            <svg
+                                                                class="w-6 h-6 align-middle"
+                                                                width="24"
+                                                                height="24"
+                                                                viewBox="0 0 24 24"
+                                                                fill="none"
+                                                                stroke="green"
+                                                                stroke-width="2"
+                                                                stroke-linecap="round"
+                                                                stroke-linejoin="round">
+                                                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                                                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                                                            </svg>
+                                                        </div>
+                                                        <span class="text-gray-700 text-sm ml-3">Analytics</span>
+                                                    </li>
+                                                    <li class="flex items-center">
+                                                        <div class=" rounded-full p-2 fill-current text-green-700">
+                                                            <svg
+                                                                class="w-6 h-6 align-middle"
+                                                                width="24"
+                                                                height="24"
+                                                                viewBox="0 0 24 24"
+                                                                fill="none"
+                                                                stroke="green"
+                                                                stroke-width="2"
+                                                                stroke-linecap="round"
+                                                                stroke-linejoin="round">
+                                                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                                                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                                                            </svg>
+                                                        </div>
+                                                        <span class="text-gray-700 text-sm ml-3">SMS</span>
+                                                    </li>
+                                                    <li class="flex items-center">
+                                                        <div class=" rounded-full p-2 fill-current text-green-700">
+                                                            <svg
+                                                                class="w-6 h-6 align-middle"
+                                                                width="24"
+                                                                height="24"
+                                                                viewBox="0 0 24 24"
+                                                                fill="none"
+                                                                stroke="green"
+                                                                stroke-width="2"
+                                                                stroke-linecap="round"
+                                                                stroke-linejoin="round">
+                                                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                                                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                                                            </svg>
+                                                        </div>
+                                                        <span class="text-gray-700 text-sm ml-3">Bot Server</span>
+                                                    </li>
+                                                    <li class="flex items-center">
+                                                        <div class=" rounded-full p-2 fill-current text-green-700">
+                                                            <svg
+                                                                class="w-6 h-6 align-middle"
+                                                                width="24"
+                                                                height="24"
+                                                                viewBox="0 0 24 24"
+                                                                fill="none"
+                                                                stroke="green"
+                                                                stroke-width="2"
+                                                                stroke-linecap="round"
+                                                                stroke-linejoin="round">
+                                                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                                                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                                                            </svg>
+                                                        </div>
+                                                        <span class="text-gray-700 text-sm ml-3">Domain</span>
+                                                    </li>
+                                                    <li class="flex items-center">
+                                                        <div class=" rounded-full p-2 fill-current text-green-700">
+                                                            <svg
+                                                                class="w-6 h-6 align-middle"
+                                                                width="24"
+                                                                height="24"
+                                                                viewBox="0 0 24 24"
+                                                                fill="none"
+                                                                stroke="green"
+                                                                stroke-width="2"
+                                                                stroke-linecap="round"
+                                                                stroke-linejoin="round">
+                                                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                                                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                                                            </svg>
+                                                        </div>
+                                                        <span class="text-gray-700 text-sm ml-3">GSuite</span>
                                                     </li>
                                                 </ul>
+
                                             </div>
 
                                             <div class="block flex items-center p-8  uppercase">
