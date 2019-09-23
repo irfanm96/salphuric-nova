@@ -388,6 +388,14 @@
 
                 </tab-content>
 
+                <template slot="footer" slot-scope="props" v-if="props.activeTabIndex===1">
+                    <div class=wizard-footer-left>
+                       <span role="button" tabindex="0">
+                           <button tabindex="-1" type="button" class="wizard-btn"
+                                   style="background-color: rgb(155, 89, 182); border-color: rgb(155, 89, 182); color: white;" @click.prevent="props.prevTab">Back</button>
+                       </span>
+                    </div>
+                </template>
 
             </form-wizard>
 
@@ -395,7 +403,12 @@
     </div>
 </template>
 <style scoped src="vue-multiselect/dist/vue-multiselect.min.css"></style>
-
+<style scoped>
+    .finish-button {
+        background-color: #43A047 !important;
+        border-color: #43A047 !important;
+    }
+</style>
 <script>
 
     import Multiselect from 'vue-multiselect'
@@ -422,20 +435,20 @@
                     domain: '',
                     type: ''
                 },
-                mode:'quick'
+                mode: 'quick'
             }
         },
 
         computed: {
             isQuick: function () {
-                return this.mode==='quick';
+                return this.mode === 'quick';
             }
         },
         methods: {
 
             handleProjectMode(btn) {
-                this.mode=btn;
-                this.$refs['form-wizard'].changeTab(1,2);
+                this.mode = btn;
+                this.$refs['form-wizard'].changeTab(1, 2);
             },
 
             onComplete: function () {
@@ -445,9 +458,8 @@
             beforeTabSwitch: function () {
                 // alert("This is called before switching tabs")
                 return true;
-            }
+            },
         }
-        ,
     }
 </script>
 
