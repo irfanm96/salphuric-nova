@@ -13,4 +13,18 @@ class Category extends Model
     const ANALYTICS = 'Analytics';
     const SMS = 'SMS';
 
+
+    public static function getCategories()
+    {
+        return [
+           self::HOSTING => self::HOSTING,
+           self::EMAIL => self::EMAIL,
+           self::SSL => self::SSL,
+           self::BACKUP => self::BACKUP,
+           self::ANALYTICS => self::ANALYTICS,
+           self::SMS => self::SMS,
+        ];
+
+    }
+
 }
