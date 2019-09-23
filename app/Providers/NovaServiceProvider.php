@@ -86,7 +86,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
             new LaravelNovaConfiguration(),
             new CashierTool(),
             new \Tightenco\NovaStripe\NovaStripe,
-            new Wizard(),
+            new Wizard,
 
 
         ];

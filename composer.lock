@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "86478b69f8cc85cc3062dba20373e612",
+    "content-hash": "20ef40a432d0875726612887faae145f",
     "packages": [
         {
             "name": "cakephp/chronos",
@@ -2526,6 +2526,39 @@
             "time": "2019-02-22T07:42:52+00:00"
         },
         {
+            "name": "salfade/wizard",
+            "version": "dev-master",
+            "dist": {
+                "type": "path",
+                "url": "./nova-components/Wizard",
+                "reference": "7ce47204a26a78f426cc05bc890eefbdcaf9b252"
+            },
+            "require": {
+                "php": ">=7.1.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Salfade\\Wizard\\ToolServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Salfade\\Wizard\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "A Laravel Nova tool.",
+            "keywords": [
+                "laravel",
+                "nova"
+            ]
+        },
+        {
             "name": "spatie/laravel-permission",
             "version": "3.0",
             "source": {
@@ -4206,104 +4239,6 @@
                 "dump"
             ],
             "time": "2019-08-26T08:26:39+00:00"
-        },
-        {
-            "name": "themsaid/nova-cashier-manager",
-            "version": "v0.2.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/themsaid/nova-cashier-manager.git",
-                "reference": "f9a48bdd3fa84d498221bdc534e928542f639e11"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/themsaid/nova-cashier-manager/zipball/f9a48bdd3fa84d498221bdc534e928542f639e11",
-                "reference": "f9a48bdd3fa84d498221bdc534e928542f639e11",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=7.1.0"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Themsaid\\CashierTool\\CashierToolServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Themsaid\\CashierTool\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Mohamed Said",
-                    "email": "mohamed@laravel.com"
-                }
-            ],
-            "description": "Managing Stripe subscriptions inside the incredible Laravel Nova admin panel.",
-            "keywords": [
-                "cashier",
-                "laravel",
-                "nova",
-                "stripe"
-            ],
-            "time": "2018-09-03T19:00:16+00:00"
-        },
-        {
-            "name": "tightenco/nova-stripe",
-            "version": "v0.2.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/tightenco/nova-stripe.git",
-                "reference": "c7c6c570fdcb8be8678f543eb9b2fd9d08e78157"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/tightenco/nova-stripe/zipball/c7c6c570fdcb8be8678f543eb9b2fd9d08e78157",
-                "reference": "c7c6c570fdcb8be8678f543eb9b2fd9d08e78157",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=7.1.0",
-                "stripe/stripe-php": ">=5.0"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Tightenco\\NovaStripe\\ToolServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Tightenco\\NovaStripe\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Samantha Geitz",
-                    "email": "samantha@tighten.co"
-                }
-            ],
-            "description": "A tool to create a quick Stripe dashboard in your Laravel Nova admin panels",
-            "keywords": [
-                "laravel",
-                "nova",
-                "stripe"
-            ],
-            "time": "2019-05-14T19:37:19+00:00"
         },
         {
             "name": "tijsverkoyen/css-to-inline-styles",
