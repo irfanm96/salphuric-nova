@@ -1,5 +1,6 @@
 <?php
 
+use App\Category;
 use App\Product;
 use Illuminate\Database\Seeder;
 
@@ -19,6 +20,7 @@ class ProductsTableSeeder extends Seeder
             'quantity' => 1,
             'price_per_unit' => 10,
             'frequency' => 'monthly',
+            'category' => Category::HOSTING
         ]);
         Product::create([
             'name' => 'Droplet 2GB',
@@ -27,6 +29,8 @@ class ProductsTableSeeder extends Seeder
             'quantity' => 1,
             'price_per_unit' => 20,
             'frequency' => 'monthly',
+            'category' => Category::HOSTING
+
         ]);
         Product::create([
             'name' => 'Droplet 3GB',
@@ -35,6 +39,8 @@ class ProductsTableSeeder extends Seeder
             'quantity' => 1,
             'price_per_unit' => 30,
             'frequency' => 'monthly',
+            'category' => Category::HOSTING
+
         ]);
         Product::create([
             'name' => 'Droplet 2GB',
@@ -43,6 +49,8 @@ class ProductsTableSeeder extends Seeder
             'quantity' => 1,
             'price_per_unit' => 30,
             'frequency' => 'monthly',
+            'category' => Category::HOSTING
+
         ]);
         Product::create([
             'name' => 'Droplet 1GB',
@@ -51,6 +59,8 @@ class ProductsTableSeeder extends Seeder
             'quantity' => 1,
             'price_per_unit' => 30,
             'frequency' => 'monthly',
+            'category' => Category::HOSTING
+
         ]);
 
         Product::create([
@@ -60,6 +70,8 @@ class ProductsTableSeeder extends Seeder
             'quantity' => 1,
             'price_per_unit' => 40,
             'frequency' => 'monthly',
+            'category' => Category::HOSTING
+
         ]);
 
         Product::create([
@@ -69,68 +81,84 @@ class ProductsTableSeeder extends Seeder
             'quantity' => 1,
             'price_per_unit' => 80,
             'frequency' => 'monthly',
+            'category' => Category::HOSTING
+
         ]);
 
         Product::create([
             'name' => 'Email package 1',
-            'description' => '1000 Emails',
+            'description' => '1000 Emails per month',
             'provider' => 'Postmark',
             'quantity' => 1,
             'price_per_unit' => 3,
             'frequency' => 'monthly',
+            'category' => Category::EMAIL
+
         ]);
 
         Product::create([
             'name' => 'Email package 2',
-            'description' => '2500 Emails',
+            'description' => '2500 Emails per month',
             'provider' => 'Postmark',
             'quantity' => 1,
             'price_per_unit' => 7,
             'frequency' => 'monthly',
+            'category' => Category::EMAIL
+
         ]);
 
         Product::create([
             'name' => 'Email package 3',
-            'description' => '5000 Emails',
+            'description' => '5000 Emails per month',
             'provider' => 'Postmark',
             'quantity' => 1,
             'price_per_unit' => 9,
             'frequency' => 'monthly',
+            'category' => Category::EMAIL
+
         ]);
 
 
         Product::create([
             'name' => 'Email package 4',
-            'description' => '10000 Emails',
+            'description' => '10000 Emails per month',
             'provider' => 'Postmark',
             'quantity' => 1,
             'price_per_unit' => 18,
             'frequency' => 'monthly',
+            'category' => Category::EMAIL
+
         ]);
         Product::create([
             'name' => 'Backup Pack 1 - daily',
-            'description' => 'Retain upto 200GB',
+            'description' => 'Retain upto 200GB - Daily Backup',
             'provider' => 'Digital Ocean',
             'quantity' => 1,
             'price_per_unit' => 1,
             'frequency' => 'daily',
+            'category' => Category::BACKUP
+
         ]);
         Product::create([
             'name' => 'Backup Pack 2 - weekly',
-            'description' => 'Retain upto 200GB',
+            'description' => 'Retain upto 200GB - Weekly Backup',
             'provider' => 'Digital Ocean',
             'quantity' => 1,
             'price_per_unit' => 4,
             'frequency' => 'weekly',
+            'category' => Category::BACKUP
+
         ]);
 
         Product::create([
             'name' => 'Backup Pack 3 - monthly',
-            'description' => 'Retain upto 200GB',
+            'description' => 'Retain upto 200GB - Monthly Backup',
             'provider' => 'Digital Ocean',
             'quantity' => 1,
             'price_per_unit' => 10,
             'frequency' => 'monthly',
+            'category' => Category::BACKUP
+
         ]);
         Product::create([
             'name' => 'SSL Pack 1',
@@ -139,6 +167,8 @@ class ProductsTableSeeder extends Seeder
             'quantity' => 1,
             'price_per_unit' => 5,
             'frequency' => 'monthly',
+            'category' => Category::SSL
+
         ]);
         Product::create([
             'name' => 'SSL Pack 2',
@@ -147,6 +177,8 @@ class ProductsTableSeeder extends Seeder
             'quantity' => 1,
             'price_per_unit' => 49,
             'frequency' => 'annually',
+            'category' => Category::SSL
+
         ]);
         Product::create([
             'name' => 'Analytics Report',
@@ -155,6 +187,8 @@ class ProductsTableSeeder extends Seeder
             'quantity' => 1,
             'price_per_unit' => 5,
             'frequency' => 'monthly',
+            'category' => Category::ANALYTICS
+
         ]);
         Product::create([
             'name' => 'Analytics Report',
@@ -163,6 +197,8 @@ class ProductsTableSeeder extends Seeder
             'quantity' => 1,
             'price_per_unit' => 3,
             'frequency' => 'monthly',
+            'category' => Category::ANALYTICS
+
         ]);
         Product::create([
             'name' => 'Analytics Report',
@@ -171,6 +207,8 @@ class ProductsTableSeeder extends Seeder
             'quantity' => 1,
             'price_per_unit' => 2,
             'frequency' => 'monthly',
+            'category' => Category::ANALYTICS
+
         ]);
         Product::create([
             'name' => 'SMS Notifications',
@@ -179,6 +217,7 @@ class ProductsTableSeeder extends Seeder
             'quantity' => 1,
             'price_per_unit' => 0.05,
             'frequency' => 'per_unit',
+            'category' => Category::SMS
         ]);
 
     }

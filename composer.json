@@ -22,7 +22,8 @@
         "spatie/laravel-permission": "^3.0",
         "themsaid/nova-cashier-manager": "^0.2.1",
         "tightenco/nova-stripe": "^0.2.2",
-        "vyuldashev/nova-permission": "^2.1"
+        "vyuldashev/nova-permission": "^2.1",
+        "salfade/wizard": "*"
     },
     "require-dev": {
         "facade/ignition": "^1.4",
@@ -36,6 +37,10 @@
         {
             "type": "path",
             "url": "./nova"
+        },
+        {
+            "type": "path",
+            "url": "./nova-components/Wizard"
         }
     ],
     "config": {

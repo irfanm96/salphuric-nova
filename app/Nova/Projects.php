@@ -49,18 +49,24 @@ class Projects extends Resource
         $fields = [];
         $fields[] = ID::make()->sortable();
         $fields[] = BelongsTo::make('User')->rules('required');
-        $fields[] = Text::make('name');
-        $fields[] = Text::make('description');
-        $fields[] = Text::make('domain');
-        $fields[] = Multiselect::make('type')
+        $fields[] = Text::make('Name');
+        $fields[] = Text::make('Description');
+        $fields[] = Text::make('Domain')->displayUsing(function ($domain) {
+            return '<a href="' . $domain . '">' . $domain . '</a>';
+        })->asHtml();
+//        $fields[] = Text::make('Domain')->onlyOnIndex();
+        $fields[] = Multiselect::make('Type')
             ->options([
                 'web' => 'Web',
                 'api' => 'API',
                 'android' => 'Android',
                 'ios' => 'IOS',
             ])
-            ->placeholder('Choose type of the project')->rules('required');
-        $fields[] = Select::make('status')->options([
+            ->placeholder('Choose type of the project')->rules('required')->onlyOnForms();
+        $fields[]=Text::make('Type')->displayUsing(function ($type){
+            return $type;
+        })->onlyOnDetail();
+        $fields[] = Select::make('Status')->options([
             'pending' => 'Pending',
             'active' => 'Active',
             'terminated' => 'Terminated',
