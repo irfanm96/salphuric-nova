@@ -695,7 +695,7 @@
             },
 
             onComplete: function () {
-                alert('Yay. Done!');
+                this.$toasted.show('Congrats Your Project has been created!', { type: 'success' })
             }
             ,
             beforeTabSwitch: function () {
