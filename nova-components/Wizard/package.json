@@ -19,6 +19,7 @@
         "@fortawesome/vue-fontawesome": "^0.1.7",
         "element-ui": "^2.12.0",
         "vue": "^2.5.0",
-        "vue-form-wizard": "^0.8.4"
+        "vue-form-wizard": "^0.8.4",
+        "vue-multiselect": "^2.1.6"
     }
 }
