@@ -20,7 +20,7 @@
                                     </label>
                                 </div>
                                 <div class="py-6 px-8 w-3/5"><input id="name" dusk="name" type="text" placeholder="Name"
-                                                                    class="w-full form-control form-input form-input-bordered">
+                                                                    class="w-full form-control form-input form-input-bordered" v-model="project.name">
                                     <!---->
                                     <div class="help-text help-text mt-2"></div>
                                 </div>
@@ -33,7 +33,7 @@
                                 </div>
                                 <div class="py-6 px-8 w-3/5"><input id="description" dusk="description" type="text"
                                                                     placeholder="Description"
-                                                                    class="w-full form-control form-input form-input-bordered">
+                                                                    class="w-full form-control form-input form-input-bordered" v-model="project.description">
                                     <!---->
                                     <div class="help-text help-text mt-2"></div>
                                 </div>
@@ -45,7 +45,7 @@
                                 </label></div>
                                 <div class="py-6 px-8 w-3/5"><input id="domain" dusk="domain" type="text"
                                                                     placeholder="Domain"
-                                                                    class="w-full form-control form-input form-input-bordered">
+                                                                    class="w-full form-control form-input form-input-bordered" v-model="project.domain">
                                     <div class="pt-2">
                                         <label class="cont text-80 ">I own this domain
                                             <input type="checkbox" checked="checked">
@@ -663,8 +663,8 @@
                                 </div>
                             </div>
                             <div class="border-b border-40">
-                                <div class="w-full flex border-b border-40">
-                                    <div class="w-1/5 px-8 py-6 my-auto">
+                                <div class="w-full flex border-b border-40 items-center">
+                                    <div class="w-1/5 px-8 py-6 my-auto ">
                                         <label class="inline-block text-80 pt-2 leading-tight">
                                             SMS Subscriptions
                                         </label>
@@ -672,11 +672,110 @@
                                     <div class="py-6 px-8 w-4/5">
 
                                         <div>
-                                            <custom-slider :values="smsSliderValues" raising v-model="smsSlider"/>
-                                            {{ smsSlider }}
+                                            Pay As You Go
                                         </div>
                                         <!---->
                                         <div class="help-text help-text mt-2"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="border-b border-40 ">
+                                <div class="w-full flex border-b border-40 items-center">
+                                    <div class="w-1/5 px-8 py-6 my-auto">
+                                        <label class="inline-block text-80 pt-2 leading-tight">
+                                            Hosting Droplets
+                                        </label>
+                                    </div>
+                                    <div class="py-6 px-8 w-4/5">
+                                        <div class="flex-col w-full">
+
+                                            <div class="mr-3 mb-3" v-for="droplet in droplets" :key="droplet.id">
+
+                                                <input :id="'droplet'+droplet.id" :name="'droplet'+droplet.id"
+                                                       type="radio"
+                                                       :value="droplet" class="hidden" v-model="selected_droplet"/>
+                                                <label :for="'droplet'+droplet.id"
+                                                       class="flex items-center cursor-pointer">
+                                                    <span
+                                                        class="w-4 h-4 inline-block mr-1 rounded-full border border-grey"></span>
+                                                    {{droplet.description}}</label>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="border-b border-40 ">
+                                <div class="w-full flex border-b border-40 items-center">
+                                    <div class="w-1/5 px-8 py-6 my-auto">
+                                        <label class="inline-block text-80 pt-2 leading-tight">
+                                            SSL
+                                        </label>
+                                    </div>
+                                    <div class="py-6 px-8 w-4/5">
+                                        <div class="flex-col w-full">
+
+                                            <div class="mr-3 mb-3" v-for="item in sslPacks" :key="item.id">
+
+                                                <input :id="'ssl'+item.id" :name="'ssl'+item.id" type="radio"
+                                                       :value="item" class="hidden" v-model="selected_ssl"/>
+                                                <label :for="'ssl'+item.id" class="flex items-center cursor-pointer">
+                                                    <span
+                                                        class="w-4 h-4 inline-block mr-1 rounded-full border border-grey"></span>
+                                                    {{item.description}}</label>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="border-b border-40 ">
+                                <div class="w-full flex border-b border-40 items-center">
+                                    <div class="w-1/5 px-8 py-6 my-auto">
+                                        <label class="inline-block text-80 pt-2 leading-tight">
+                                            BackUp Packs
+                                        </label>
+                                    </div>
+                                    <div class="py-6 px-8 w-4/5">
+                                        <div class="flex-col w-full">
+
+                                            <div class="mr-3 mb-3" v-for="item in backupPacks" :key="item.id">
+
+                                                <input :id="'backup'+item.id" :name="'backup'+item.id" type="radio"
+                                                       :value="item" class="hidden" v-model="selected_backup"/>
+                                                <label :for="'backup'+item.id" class="flex items-center cursor-pointer">
+                                                    <span
+                                                        class="w-4 h-4 inline-block mr-1 rounded-full border border-grey"></span>
+                                                    {{item.description}}</label>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="border-b border-40 ">
+                                <div class="w-full flex border-b border-40 items-center">
+                                    <div class="w-1/5 px-8 py-6 my-auto">
+                                        <label class="inline-block text-80 pt-2 leading-tight">
+                                            Analytics Packs
+                                        </label>
+                                    </div>
+                                    <div class="py-6 px-8 w-4/5">
+                                        <div class="flex-col w-full">
+
+                                            <div class="mr-3 mb-3" v-for="item in analyticsPacks" :key="item.id">
+
+                                                <input :id="'analytics'+item.id" :name="'analytics'+item.id"
+                                                       type="radio"
+                                                       :value="item" class="hidden" v-model="selected_backup"/>
+                                                <label :for="'analytics'+item.id"
+                                                       class="flex items-center cursor-pointer">
+                                                    <span
+                                                        class="w-4 h-4 inline-block mr-1 rounded-full border border-grey"></span>
+                                                    {{item.description}}</label>
+
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -801,56 +900,40 @@
                     {name: 'Android'},
                     {name: 'IOS'}],
                 project: {
-                    name: '',
-                    description: '',
-                    domain: '',
+                    name: 'test',
+                    description: 'test project',
+                    domain: 'test.com',
                     type: ''
                 },
                 mode: 'quick',
                 emailSlider: "a",
                 emailSliderValues: [
                     {
-                        label: "Not at all",
-                        value: "a"
-                    },
-                    {
-                        label: "A tiny bit",
-                        value: "b"
-                    },
-                    {
-                        label: "Its ok",
-                        value: "c"
-                    },
-                    {
-                        label: "Its very good",
-                        value: "d"
-                    },
-                    {
-                        label: "Its AMAZING!",
-                        value: "e"
+                        label: "",
+                        value: ""
                     }],
                 smsSlider: "a",
                 smsSliderValues: [
                     {
-                        label: "Not at all",
-                        value: "a"
-                    },
-                    {
-                        label: "A tiny bit",
-                        value: "b"
-                    },
-                    {
-                        label: "Its ok",
-                        value: "c"
-                    },
-                    {
-                        label: "Its very good",
-                        value: "d"
-                    },
-                    {
-                        label: "Its AMAZING!",
-                        value: "e"
+                        label: "",
+                        value: ""
                     }],
+                droplets: [
+                    {name: '', id: '', description: ''}
+                ],
+                sslPacks: [
+                    {name: '', id: '', description: ''}
+                ],
+                backupPacks: [
+                    {name: '', id: '', description: ''}
+                ],
+                analyticsPacks: [
+                    {name: '', id: '', description: ''}
+                ],
+                selected_droplet: {},
+                selected_ssl: {},
+                selected_backup: {},
+                selected_analytics: {},
             }
         },
         computed: {
@@ -860,43 +943,63 @@
         },
         mounted() {
             this.fetchEmailSubscriptions();
-            this.fetchSmsSubscriptions();
+            this.fetchData();
+
         },
         methods: {
+
+            fetchData() {
+                Nova.request().get('/nova-vendor/wizard/fetch')
+                    .then(data => {
+                        var d = data.data;
+                        this.droplets = d.Hosting;
+                        this.sslPacks = d.SSL;
+                        this.backupPacks = d.BackUp;
+                        this.analyticsPacks = d.Analytics;
+                        this.smsSliderValues = d.SMS;
+                    }).catch(d => {
+
+                    console.log("error ");
+
+                });
+            },
 
             fetchEmailSubscriptions() {
                 Nova.request().get('/nova-vendor/wizard/email')
                     .then(data => {
-                       this.emailSliderValues=data.data;
-                       this.emailSlider=data.data[0].value;
-                        // console.log(data.data);
+                        this.emailSliderValues = data.data;
+                        this.emailSlider = data.data[0].value;
+                        console.log(data.data);
                     }).catch(d => {
 
                     console.log("error ");
 
                 });
             },
-            fetchSmsSubscriptions() {
-                Nova.request().get('/nova-vendor/wizard/sms')
-                    .then(data => {
-                        this.smsSliderValues=data.data;
-                        this.smsSlider=data.data[0].value;
-                        // console.log(this.smsSliderValues);
-                    }).catch(d => {
-
-                    console.log("error ");
-
-                });
-            },
-
-
             handleProjectMode(btn) {
                 this.mode = btn;
                 this.$refs['form-wizard'].changeTab(1, 2);
             },
 
             onComplete: function () {
-                this.$toasted.show('Congrats Your Project has been created!', {type: 'success'})
+
+                var data = {};
+                data.project=this.project;
+                data.products=[];
+                data.products[0]=this.selected_analytics;
+                data.products[1]=this.selected_backup;
+                data.products[2]=this.selected_droplet;
+                data.products[3]=this.selected_ssl;
+                console.log(data.project.type);
+                Nova.request().post('/nova-vendor/wizard/create-project',data)
+                    .then(d => {
+                        this.$toasted.show('Congrats Your Project has been created!', {type: 'success'})
+                    }).catch(e => {
+                    this.$toasted.show('Something went wrong ,Try Again later', {type: 'error'})
+
+                });
+
+
             }
             ,
             beforeTabSwitch: function () {
