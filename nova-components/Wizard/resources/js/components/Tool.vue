@@ -23,7 +23,7 @@
                                                                     class="w-full form-control form-input form-input-bordered"
                                                                     v-model="project.name">
                                     <!---->
-                                    <div class="help-text help-text mt-2"></div>
+                                    <div class="help-text help-text mt-2 text-danger"></div>
                                 </div>
                             </div>
                             <div class="w-full flex border-b border-40">
@@ -35,7 +35,7 @@
                                 <div class="py-6 px-8 w-3/5"><input id="description" dusk="description" type="text"
                                                                     placeholder="Description"
                                                                     class="w-full form-control form-input form-input-bordered"
-                                                                    v-model="project.description">
+                                                                    v-model="project.description" required>
                                     <!---->
                                     <div class="help-text help-text mt-2"></div>
                                 </div>
@@ -48,7 +48,7 @@
                                 <div class="py-6 px-8 w-3/5"><input id="domain" dusk="domain" type="text"
                                                                     placeholder="Domain"
                                                                     class="w-full form-control form-input form-input-bordered"
-                                                                    v-model="project.domain">
+                                                                    v-model="project.domain" required>
                                     <div class="pt-2">
                                         <label class="cont text-80 ">I own this domain
                                             <input type="checkbox" checked="checked">
@@ -71,7 +71,7 @@
                                                  :close-on-select="true"
                                                  placeholder="Choose the project types"
                                                  label="name"
-                                                 track-by="name">
+                                                 track-by="name" required>
                                     </multiselect>
                                 </div>
                             </div>
@@ -903,9 +903,9 @@
                     {name: 'Android'},
                     {name: 'IOS'}],
                 project: {
-                    name: 'test',
-                    description: 'test project',
-                    domain: 'test.com',
+                    name: '',
+                    description: '',
+                    domain: '',
                     type: ''
                 },
                 mode: 'quick',
@@ -933,10 +933,10 @@
                 analyticsPacks: [
                     {name: '', id: '', description: ''}
                 ],
-                selected_droplet: {},
-                selected_ssl: {},
-                selected_backup: {},
-                selected_analytics: {},
+                selected_droplet: '',
+                selected_ssl: '',
+                selected_backup: '',
+                selected_analytics: '',
             }
         },
         computed: {
@@ -985,7 +985,10 @@
             },
 
             onComplete: function () {
-
+                if(!this.validateProducts()){
+                    console.log("false");
+                    return false;
+                }
                 var data = {};
                 console.log(this.emailSlider);
                 data.project = this.project;
@@ -1014,9 +1017,50 @@
             }
             ,
             beforeTabSwitch: function () {
-                // alert("This is called before switching tabs")
-                return true;
+
+                return this.validateProject();
+                ;
             },
+            validateProject() {
+                if (this.project.name === '') {
+                    this.$toasted.show('Project Name is required', {type: 'error'})
+                    return false;
+                }
+                if (this.project.description === '') {
+                    this.$toasted.show('Project Description is required', {type: 'error'})
+                    return false;
+                }
+                if (this.project.domain === '') {
+                    this.$toasted.show('Project Domain is required', {type: 'error'})
+                    return false;
+                }
+                if (this.project.type === '') {
+                    this.$toasted.show('Project Type is required', {type: 'error'})
+                    return false;
+                }
+                return true;
+
+            },
+            validateProducts() {
+                if (this.selected_analytics == '') {
+                    this.$toasted.show('Please Select an Analytics Pack to proceed', {type: 'error'})
+                    return false;
+                }
+                if (this.selected_backup == '') {
+                    this.$toasted.show('Please Select a Backup Pack to proceed', {type: 'error'})
+                    return false;
+                }
+                if (this.selected_ssl == '') {
+                    this.$toasted.show('Please Select a SSL Pack to proceed', {type: 'error'})
+                    return false;
+                }
+                if (this.selected_droplet == '') {
+                    this.$toasted.show('Please Select a Droplet Pack to proceed', {type: 'error'})
+                    return false;
+                }
+                return true;
+
+            }
         }
     }
 </script>
