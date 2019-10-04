@@ -47,9 +47,14 @@ Route::post('/create-project', function (Request $request) {
         'type' => $type,
     ]);
 
-//    foreach ($products as $product) {
-//        $project->projectProducts()->product()->create($product);
-//    }
+    foreach ($products as $product) {
+
+        \App\ProjectProduct::create([
+            'project_id'=>$project->id,
+            'product_id'=>$product
+        ]);
+
+    }
     return $project;
 
 });

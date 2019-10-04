@@ -20,7 +20,8 @@
                                     </label>
                                 </div>
                                 <div class="py-6 px-8 w-3/5"><input id="name" dusk="name" type="text" placeholder="Name"
-                                                                    class="w-full form-control form-input form-input-bordered" v-model="project.name">
+                                                                    class="w-full form-control form-input form-input-bordered"
+                                                                    v-model="project.name">
                                     <!---->
                                     <div class="help-text help-text mt-2"></div>
                                 </div>
@@ -33,7 +34,8 @@
                                 </div>
                                 <div class="py-6 px-8 w-3/5"><input id="description" dusk="description" type="text"
                                                                     placeholder="Description"
-                                                                    class="w-full form-control form-input form-input-bordered" v-model="project.description">
+                                                                    class="w-full form-control form-input form-input-bordered"
+                                                                    v-model="project.description">
                                     <!---->
                                     <div class="help-text help-text mt-2"></div>
                                 </div>
@@ -45,7 +47,8 @@
                                 </label></div>
                                 <div class="py-6 px-8 w-3/5"><input id="domain" dusk="domain" type="text"
                                                                     placeholder="Domain"
-                                                                    class="w-full form-control form-input form-input-bordered" v-model="project.domain">
+                                                                    class="w-full form-control form-input form-input-bordered"
+                                                                    v-model="project.domain">
                                     <div class="pt-2">
                                         <label class="cont text-80 ">I own this domain
                                             <input type="checkbox" checked="checked">
@@ -693,7 +696,7 @@
 
                                                 <input :id="'droplet'+droplet.id" :name="'droplet'+droplet.id"
                                                        type="radio"
-                                                       :value="droplet" class="hidden" v-model="selected_droplet"/>
+                                                       :value="droplet.id" class="hidden" v-model="selected_droplet"/>
                                                 <label :for="'droplet'+droplet.id"
                                                        class="flex items-center cursor-pointer">
                                                     <span
@@ -718,7 +721,7 @@
                                             <div class="mr-3 mb-3" v-for="item in sslPacks" :key="item.id">
 
                                                 <input :id="'ssl'+item.id" :name="'ssl'+item.id" type="radio"
-                                                       :value="item" class="hidden" v-model="selected_ssl"/>
+                                                       :value="item.id" class="hidden" v-model="selected_ssl"/>
                                                 <label :for="'ssl'+item.id" class="flex items-center cursor-pointer">
                                                     <span
                                                         class="w-4 h-4 inline-block mr-1 rounded-full border border-grey"></span>
@@ -742,7 +745,7 @@
                                             <div class="mr-3 mb-3" v-for="item in backupPacks" :key="item.id">
 
                                                 <input :id="'backup'+item.id" :name="'backup'+item.id" type="radio"
-                                                       :value="item" class="hidden" v-model="selected_backup"/>
+                                                       :value="item.id" class="hidden" v-model="selected_backup"/>
                                                 <label :for="'backup'+item.id" class="flex items-center cursor-pointer">
                                                     <span
                                                         class="w-4 h-4 inline-block mr-1 rounded-full border border-grey"></span>
@@ -767,7 +770,7 @@
 
                                                 <input :id="'analytics'+item.id" :name="'analytics'+item.id"
                                                        type="radio"
-                                                       :value="item" class="hidden" v-model="selected_backup"/>
+                                                       :value="item.id" class="hidden" v-model="selected_analytics"/>
                                                 <label :for="'analytics'+item.id"
                                                        class="flex items-center cursor-pointer">
                                                     <span
@@ -984,14 +987,22 @@
             onComplete: function () {
 
                 var data = {};
-                data.project=this.project;
-                data.products=[];
-                data.products[0]=this.selected_analytics;
-                data.products[1]=this.selected_backup;
-                data.products[2]=this.selected_droplet;
-                data.products[3]=this.selected_ssl;
-                console.log(data.project.type);
-                Nova.request().post('/nova-vendor/wizard/create-project',data)
+                console.log(this.emailSlider);
+                data.project = this.project;
+                data.products = {};
+                data.products[0] = this.selected_analytics;
+                data.products[1] = this.selected_backup;
+                data.products[2] = this.selected_droplet;
+                data.products[3] = this.selected_ssl;
+                let i = 0;
+                for (; i < this.emailSliderValues; i++) {
+                    if (this.emailSliderValues[i].value === this.emailSlider) {
+                        break;
+                    }
+                }
+                data.products[4] = this.emailSliderValues[i].id;
+                console.log(data.products);
+                Nova.request().post('/nova-vendor/wizard/create-project', data)
                     .then(d => {
                         this.$toasted.show('Congrats Your Project has been created!', {type: 'success'})
                     }).catch(e => {
