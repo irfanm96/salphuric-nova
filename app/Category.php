@@ -9,7 +9,7 @@ class Category extends Model
     const HOSTING = 'Hosting';
     const EMAIL = 'Email';
     const SSL = 'SSL';
-    const BACKUP = 'Back Up';
+    const BACKUP = 'BackUp';
     const ANALYTICS = 'Analytics';
     const SMS = 'SMS';
 

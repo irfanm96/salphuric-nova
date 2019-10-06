@@ -20,9 +20,10 @@
                                     </label>
                                 </div>
                                 <div class="py-6 px-8 w-3/5"><input id="name" dusk="name" type="text" placeholder="Name"
-                                                                    class="w-full form-control form-input form-input-bordered">
+                                                                    class="w-full form-control form-input form-input-bordered"
+                                                                    v-model="project.name">
                                     <!---->
-                                    <div class="help-text help-text mt-2"></div>
+                                    <div class="help-text help-text mt-2 text-danger"></div>
                                 </div>
                             </div>
                             <div class="w-full flex border-b border-40">
@@ -33,7 +34,8 @@
                                 </div>
                                 <div class="py-6 px-8 w-3/5"><input id="description" dusk="description" type="text"
                                                                     placeholder="Description"
-                                                                    class="w-full form-control form-input form-input-bordered">
+                                                                    class="w-full form-control form-input form-input-bordered"
+                                                                    v-model="project.description" required>
                                     <!---->
                                     <div class="help-text help-text mt-2"></div>
                                 </div>
@@ -45,8 +47,15 @@
                                 </label></div>
                                 <div class="py-6 px-8 w-3/5"><input id="domain" dusk="domain" type="text"
                                                                     placeholder="Domain"
-                                                                    class="w-full form-control form-input form-input-bordered">
-                                    <!---->
+                                                                    class="w-full form-control form-input form-input-bordered"
+                                                                    v-model="project.domain" required>
+                                    <div class="pt-2">
+                                        <label class="cont text-80 ">I own this domain
+                                            <input type="checkbox" checked="checked">
+                                            <span class="checkmark"></span>
+                                        </label>
+
+                                    </div>
                                     <div class="help-text help-text mt-2"></div>
                                 </div>
                             </div>
@@ -62,7 +71,7 @@
                                                  :close-on-select="true"
                                                  placeholder="Choose the project types"
                                                  label="name"
-                                                 track-by="name">
+                                                 track-by="name" required>
                                     </multiselect>
                                 </div>
                             </div>
@@ -117,7 +126,7 @@
                                                 <h1 class="text-lg font-medium uppercase p-3 pb-0 text-center tracking-wide">
                                                     Hobby
                                                 </h1>
-<!--                                                <h2 class="text-sm text-gray-500 text-center pb-6">FREE</h2>-->
+                                                <!--                                                <h2 class="text-sm text-gray-500 text-center pb-6">FREE</h2>-->
 
                                                 Stripe offers everything needed to run an online business
                                                 at scale. Get in touch for details.
@@ -159,7 +168,8 @@
                                                                 <polyline points="22 4 12 14.01 9 11.01"></polyline>
                                                             </svg>
                                                         </div>
-                                                        <span class="text-gray-700 text-sm ml-3">1000 transaction Emails</span>
+                                                        <span
+                                                            class="text-gray-700 text-sm ml-3">1000 transaction Emails</span>
                                                     </li>
                                                     <li class="flex items-center">
                                                         <div class=" rounded-full p-2 fill-current text-green-700">
@@ -254,7 +264,8 @@
                                                 </ul>
                                             </div>
                                             <div class="block flex items-center p-8  uppercase">
-                                                <button class="mt-3 text-lg font-semibold bg-black w-full text-white rounded-lg px-6 py-3 block shadow-xl hover:bg-gray-700">
+                                                <button
+                                                    class="mt-3 text-lg font-semibold bg-black w-full text-white rounded-lg px-6 py-3 block shadow-xl hover:bg-gray-700">
                                                     Select
                                                 </button>
                                             </div>
@@ -312,7 +323,8 @@
                                                             <polyline points="22 4 12 14.01 9 11.01"></polyline>
                                                         </svg>
                                                     </div>
-                                                    <span class="text-gray-700 text-sm ml-3">2500 transaction Emails</span>
+                                                    <span
+                                                        class="text-gray-700 text-sm ml-3">2500 transaction Emails</span>
                                                 </li>
                                                 <li class="flex items-center">
                                                     <div class=" rounded-full p-2 fill-current text-green-700">
@@ -409,7 +421,8 @@
                                         </div>
 
                                         <div class="block flex items-center p-8  uppercase">
-                                            <button class="mt-3 text-lg font-semibold bg-black w-full text-white rounded-lg px-6 py-3 block shadow-xl hover:bg-gray-700">
+                                            <button
+                                                class="mt-3 text-lg font-semibold bg-black w-full text-white rounded-lg px-6 py-3 block shadow-xl hover:bg-gray-700">
                                                 Select
                                             </button>
                                         </div>
@@ -463,7 +476,8 @@
                                                                 <polyline points="22 4 12 14.01 9 11.01"></polyline>
                                                             </svg>
                                                         </div>
-                                                        <span class="text-gray-700 text-sm ml-3">5000 transaction Emails</span>
+                                                        <span
+                                                            class="text-gray-700 text-sm ml-3">5000 transaction Emails</span>
                                                     </li>
                                                     <li class="flex items-center">
                                                         <div class=" rounded-full p-2 fill-current text-green-700">
@@ -517,7 +531,8 @@
                                                                 <polyline points="22 4 12 14.01 9 11.01"></polyline>
                                                             </svg>
                                                         </div>
-                                                        <span class="text-gray-700 text-sm ml-3">Push Notifications</span>
+                                                        <span
+                                                            class="text-gray-700 text-sm ml-3">Push Notifications</span>
                                                     </li>
                                                     <li class="flex items-center">
                                                         <div class=" rounded-full p-2 fill-current text-green-700">
@@ -628,6 +643,149 @@
                             </div>
                         </div>
                     </section>
+                    <section v-else>
+
+
+                        <div class="card">
+                            <div class="border-b border-40">
+                                <div class="w-full flex border-b border-40">
+                                    <div class="w-1/5 px-8 py-6 my-auto">
+                                        <label class="inline-block text-80 pt-2 leading-tight">
+                                            Email Subscriptions
+                                        </label>
+                                    </div>
+                                    <div class="py-6 px-8 w-4/5">
+
+                                        <div>
+                                            <custom-slider :values="emailSliderValues" raising v-model="emailSlider"/>
+                                            {{ emailSlider }}
+                                        </div>
+                                        <!---->
+                                        <div class="help-text help-text mt-2"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="border-b border-40">
+                                <div class="w-full flex border-b border-40 items-center">
+                                    <div class="w-1/5 px-8 py-6 my-auto ">
+                                        <label class="inline-block text-80 pt-2 leading-tight">
+                                            SMS Subscriptions
+                                        </label>
+                                    </div>
+                                    <div class="py-6 px-8 w-4/5">
+
+                                        <div>
+                                            Pay As You Go
+                                        </div>
+                                        <!---->
+                                        <div class="help-text help-text mt-2"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="border-b border-40 ">
+                                <div class="w-full flex border-b border-40 items-center">
+                                    <div class="w-1/5 px-8 py-6 my-auto">
+                                        <label class="inline-block text-80 pt-2 leading-tight">
+                                            Hosting Droplets
+                                        </label>
+                                    </div>
+                                    <div class="py-6 px-8 w-4/5">
+                                        <div class="flex-col w-full">
+
+                                            <div class="mr-3 mb-3" v-for="droplet in droplets" :key="droplet.id">
+
+                                                <input :id="'droplet'+droplet.id" :name="'droplet'+droplet.id"
+                                                       type="radio"
+                                                       :value="droplet.id" class="hidden" v-model="selected_droplet"/>
+                                                <label :for="'droplet'+droplet.id"
+                                                       class="flex items-center cursor-pointer">
+                                                    <span
+                                                        class="w-4 h-4 inline-block mr-1 rounded-full border border-grey"></span>
+                                                    {{droplet.description}}</label>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="border-b border-40 ">
+                                <div class="w-full flex border-b border-40 items-center">
+                                    <div class="w-1/5 px-8 py-6 my-auto">
+                                        <label class="inline-block text-80 pt-2 leading-tight">
+                                            SSL
+                                        </label>
+                                    </div>
+                                    <div class="py-6 px-8 w-4/5">
+                                        <div class="flex-col w-full">
+
+                                            <div class="mr-3 mb-3" v-for="item in sslPacks" :key="item.id">
+
+                                                <input :id="'ssl'+item.id" :name="'ssl'+item.id" type="radio"
+                                                       :value="item.id" class="hidden" v-model="selected_ssl"/>
+                                                <label :for="'ssl'+item.id" class="flex items-center cursor-pointer">
+                                                    <span
+                                                        class="w-4 h-4 inline-block mr-1 rounded-full border border-grey"></span>
+                                                    {{item.description}}</label>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="border-b border-40 ">
+                                <div class="w-full flex border-b border-40 items-center">
+                                    <div class="w-1/5 px-8 py-6 my-auto">
+                                        <label class="inline-block text-80 pt-2 leading-tight">
+                                            BackUp Packs
+                                        </label>
+                                    </div>
+                                    <div class="py-6 px-8 w-4/5">
+                                        <div class="flex-col w-full">
+
+                                            <div class="mr-3 mb-3" v-for="item in backupPacks" :key="item.id">
+
+                                                <input :id="'backup'+item.id" :name="'backup'+item.id" type="radio"
+                                                       :value="item.id" class="hidden" v-model="selected_backup"/>
+                                                <label :for="'backup'+item.id" class="flex items-center cursor-pointer">
+                                                    <span
+                                                        class="w-4 h-4 inline-block mr-1 rounded-full border border-grey"></span>
+                                                    {{item.description}}</label>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="border-b border-40 ">
+                                <div class="w-full flex border-b border-40 items-center">
+                                    <div class="w-1/5 px-8 py-6 my-auto">
+                                        <label class="inline-block text-80 pt-2 leading-tight">
+                                            Analytics Packs
+                                        </label>
+                                    </div>
+                                    <div class="py-6 px-8 w-4/5">
+                                        <div class="flex-col w-full">
+
+                                            <div class="mr-3 mb-3" v-for="item in analyticsPacks" :key="item.id">
+
+                                                <input :id="'analytics'+item.id" :name="'analytics'+item.id"
+                                                       type="radio"
+                                                       :value="item.id" class="hidden" v-model="selected_analytics"/>
+                                                <label :for="'analytics'+item.id"
+                                                       class="flex items-center cursor-pointer">
+                                                    <span
+                                                        class="w-4 h-4 inline-block mr-1 rounded-full border border-grey"></span>
+                                                    {{item.description}}</label>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </section>
+
 
                 </tab-content>
 
@@ -635,7 +793,8 @@
                     <div class=wizard-footer-left>
                        <span role="button" tabindex="0">
                            <button tabindex="-1" type="button" class="wizard-btn"
-                                   style="background-color: rgb(155, 89, 182); border-color: rgb(155, 89, 182); color: white;" @click.prevent="props.prevTab">Back</button>
+                                   style="background-color: rgb(155, 89, 182); border-color: rgb(155, 89, 182); color: white;"
+                                   @click.prevent="props.prevTab">Back</button>
                        </span>
                     </div>
                 </template>
@@ -647,12 +806,82 @@
 </template>
 <style scoped src="vue-multiselect/dist/vue-multiselect.min.css"></style>
 <style scoped>
-    .finish-button {
-        background-color: #43A047 !important;
-        border-color: #43A047 !important;
+
+    /* The container */
+    .cont {
+        display: block;
+        position: relative;
+        padding-left: 35px;
+        margin-bottom: 12px;
+        cursor: pointer;
+        /*font-size: small;*/
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
     }
+
+    /* Hide the browser's default checkbox */
+    .cont input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+    }
+
+    /* Create a custom checkbox */
+    .checkmark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 20px;
+        width: 20px;
+        background-color: #eee;
+    }
+
+    /* On mouse-over, add a grey background color */
+    .cont:hover input ~ .checkmark {
+        background-color: #ccc;
+    }
+
+    /* When the checkbox is checked, add a blue background */
+    .cont input:checked ~ .checkmark {
+        background-color: #2196F3;
+    }
+
+    /* Create the checkmark/indicator (hidden when not checked) */
+    .checkmark:after {
+        content: "";
+        position: absolute;
+        display: none;
+    }
+
+    /* Show the checkmark when checked */
+    .cont input:checked ~ .checkmark:after {
+        display: block;
+    }
+
+    /* Style the checkmark/indicator */
+    .cont .checkmark:after {
+        left: 9px;
+        top: 5px;
+        width: 5px;
+        height: 10px;
+        border: solid white;
+        border-width: 0 3px 3px 0;
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
+    }
+
+
 </style>
 <script>
+
+    import CustomSlider from "vue-custom-range-slider";
+    // import the styling, css or scss
+    // import "vue-custom-range-slider/dist/vue-custom-range-slider.css";
 
     import Multiselect from 'vue-multiselect'
 
@@ -663,7 +892,8 @@
         components: {
             FormWizard,
             TabContent,
-            Multiselect
+            Multiselect,
+            CustomSlider
         },
         data() {
             return {
@@ -678,30 +908,159 @@
                     domain: '',
                     type: ''
                 },
-                mode: 'quick'
+                mode: 'quick',
+                emailSlider: "a",
+                emailSliderValues: [
+                    {
+                        label: "",
+                        value: ""
+                    }],
+                smsSlider: "a",
+                smsSliderValues: [
+                    {
+                        label: "",
+                        value: ""
+                    }],
+                droplets: [
+                    {name: '', id: '', description: ''}
+                ],
+                sslPacks: [
+                    {name: '', id: '', description: ''}
+                ],
+                backupPacks: [
+                    {name: '', id: '', description: ''}
+                ],
+                analyticsPacks: [
+                    {name: '', id: '', description: ''}
+                ],
+                selected_droplet: '',
+                selected_ssl: '',
+                selected_backup: '',
+                selected_analytics: '',
             }
         },
-
         computed: {
             isQuick: function () {
                 return this.mode === 'quick';
             }
         },
+        mounted() {
+            this.fetchEmailSubscriptions();
+            this.fetchData();
+
+        },
         methods: {
 
+            fetchData() {
+                Nova.request().get('/nova-vendor/wizard/fetch')
+                    .then(data => {
+                        var d = data.data;
+                        this.droplets = d.Hosting;
+                        this.sslPacks = d.SSL;
+                        this.backupPacks = d.BackUp;
+                        this.analyticsPacks = d.Analytics;
+                        this.smsSliderValues = d.SMS;
+                    }).catch(d => {
+
+                    console.log("error ");
+
+                });
+            },
+
+            fetchEmailSubscriptions() {
+                Nova.request().get('/nova-vendor/wizard/email')
+                    .then(data => {
+                        this.emailSliderValues = data.data;
+                        this.emailSlider = data.data[0].value;
+                        console.log(data.data);
+                    }).catch(d => {
+
+                    console.log("error ");
+
+                });
+            },
             handleProjectMode(btn) {
                 this.mode = btn;
                 this.$refs['form-wizard'].changeTab(1, 2);
             },
 
             onComplete: function () {
-                this.$toasted.show('Congrats Your Project has been created!', { type: 'success' })
+                if(!this.validateProducts()){
+                    console.log("false");
+                    return false;
+                }
+                var data = {};
+                console.log(this.emailSlider);
+                data.project = this.project;
+                data.products = {};
+                data.products[0] = this.selected_analytics;
+                data.products[1] = this.selected_backup;
+                data.products[2] = this.selected_droplet;
+                data.products[3] = this.selected_ssl;
+                let i = 0;
+                for (; i < this.emailSliderValues; i++) {
+                    if (this.emailSliderValues[i].value === this.emailSlider) {
+                        break;
+                    }
+                }
+                data.products[4] = this.emailSliderValues[i].id;
+                console.log(data.products);
+                Nova.request().post('/nova-vendor/wizard/create-project', data)
+                    .then(d => {
+                        this.$toasted.show('Congrats Your Project has been created!', {type: 'success'})
+                    }).catch(e => {
+                    this.$toasted.show('Something went wrong ,Try Again later', {type: 'error'})
+
+                });
+
+
             }
             ,
             beforeTabSwitch: function () {
-                // alert("This is called before switching tabs")
-                return true;
+
+                return this.validateProject();
+                ;
             },
+            validateProject() {
+                if (this.project.name === '') {
+                    this.$toasted.show('Project Name is required', {type: 'error'})
+                    return false;
+                }
+                if (this.project.description === '') {
+                    this.$toasted.show('Project Description is required', {type: 'error'})
+                    return false;
+                }
+                if (this.project.domain === '') {
+                    this.$toasted.show('Project Domain is required', {type: 'error'})
+                    return false;
+                }
+                if (this.project.type === '') {
+                    this.$toasted.show('Project Type is required', {type: 'error'})
+                    return false;
+                }
+                return true;
+
+            },
+            validateProducts() {
+                if (this.selected_analytics == '') {
+                    this.$toasted.show('Please Select an Analytics Pack to proceed', {type: 'error'})
+                    return false;
+                }
+                if (this.selected_backup == '') {
+                    this.$toasted.show('Please Select a Backup Pack to proceed', {type: 'error'})
+                    return false;
+                }
+                if (this.selected_ssl == '') {
+                    this.$toasted.show('Please Select a SSL Pack to proceed', {type: 'error'})
+                    return false;
+                }
+                if (this.selected_droplet == '') {
+                    this.$toasted.show('Please Select a Droplet Pack to proceed', {type: 'error'})
+                    return false;
+                }
+                return true;
+
+            }
         }
     }
 </script>
