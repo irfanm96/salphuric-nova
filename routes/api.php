@@ -1,5 +1,6 @@
 <?php
 
+use App\Mail\ContactEmail;
 use Illuminate\Http\Request;
 
 /*
@@ -15,4 +16,21 @@ use Illuminate\Http\Request;
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
+});
+
+
+
+Route::post('/contact', function (Request $request) {
+
+    $data = [];
+    $data['name'] = $request->input('name');
+    $data['email'] = $request->input('email');
+    $data['subject'] = $request->input('subject');
+    $data['message'] = $request->input('message');
+
+
+    Mail::to("fawzanm@gmail.com")->send(new ContactEmail($data));
+
+    return "OK";
+
 });
