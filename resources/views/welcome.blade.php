@@ -29,14 +29,14 @@
     <meta name="theme-color" content="#ffffff">
 
     <meta name="title" content="Salfade Inc | A Software Development Agency">
-    <meta name="description" content="We make industry standard Wep Applications and Mobile Applications with cutting edge
+    <meta name="description" content="We make industry standard Web Applications and Mobile Applications with cutting edge
                                 technologies">
 
     <meta property="og:url" content="https://salfade.com"/>
     <meta property="og:type" content="website"/>
     <meta property="og:title" content="Salfade Inc | A Software Development Agency"/>
     <meta property="og:description"
-          content="We make industry standard Wep Applications and Mobile Applications with cutting edge technologies"/>
+          content="We make industry standard Web Applications and Mobile Applications with cutting edge technologies"/>
     <meta property="og:image" content="https://salfade.com/themes/bizpage/img/about-plan.jpg"/>
 
     <!-- Google Fonts -->
@@ -124,7 +124,7 @@
                     <div class="carousel-container">
                         <div class="carousel-content">
                             <h2>We are professional</h2>
-                            <p>We make industry standard Wep Applications and Mobile Applications with cutting edge
+                            <p>We make industry standard Web Applications and Mobile Applications with cutting edge
                                 technologies</p>
                             <a href="#contact" class="btn-get-started scrollto">Get Started</a>
                         </div>
