@@ -57,16 +57,18 @@
                 @endif
 
 
-                    <a href="/dashboard/resources/projects/new?viaResource=&viaResourceId=&viaRelationship=" class="ml-auto mr-1 h-9 flex items-center btn btn-primary bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center ">
-                        <svg class="fill-current w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                            <path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z"/>
-                        </svg>
-                        <span>New Project</span>
-                    </a>
+                <a href="/dashboard/wizard"
+                   class="ml-auto mr-1 h-9 flex items-center btn btn-primary bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center ">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="#ffffff">
+                        <path class="heroicon-ui"
+                              d="M17 11a1 1 0 0 1 0 2h-4v4a1 1 0 0 1-2 0v-4H7a1 1 0 0 1 0-2h4V7a1 1 0 0 1 2 0v4h4z"/>
+                    </svg>
+                    <span>New Project</span>
+                </a>
 
-                    <dropdown class="ml-11 h-9 flex items-center dropdown-right">
-                        @include('nova::partials.user')
-                    </dropdown>
+                <dropdown class="ml-11 h-9 flex items-center dropdown-right">
+                    @include('nova::partials.user')
+                </dropdown>
 
 
             </div>

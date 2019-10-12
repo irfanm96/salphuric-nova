@@ -20,7 +20,8 @@ class ProductsTableSeeder extends Seeder
             'quantity' => 1,
             'price_per_unit' => 10,
             'frequency' => 'monthly',
-            'category' => Category::HOSTING
+            'category' => Category::HOSTING,
+            'plan'=>'hobby',
         ]);
         Product::create([
             'name' => 'Droplet 2GB',
@@ -29,6 +30,7 @@ class ProductsTableSeeder extends Seeder
             'quantity' => 1,
             'price_per_unit' => 20,
             'frequency' => 'monthly',
+            'plan'=>'growth',
             'category' => Category::HOSTING
 
         ]);
@@ -39,6 +41,7 @@ class ProductsTableSeeder extends Seeder
             'quantity' => 1,
             'price_per_unit' => 30,
             'frequency' => 'monthly',
+            'plan'=>'business',
             'category' => Category::HOSTING
 
         ]);
@@ -90,6 +93,7 @@ class ProductsTableSeeder extends Seeder
             'description' => '1000 Emails per month',
             'provider' => 'Postmark',
             'quantity' => 1,
+            'plan'=>'hobby',
             'price_per_unit' => 3,
             'frequency' => 'monthly',
             'category' => Category::EMAIL
@@ -101,6 +105,7 @@ class ProductsTableSeeder extends Seeder
             'description' => '2500 Emails per month',
             'provider' => 'Postmark',
             'quantity' => 1,
+            'plan'=>'growth',
             'price_per_unit' => 7,
             'frequency' => 'monthly',
             'category' => Category::EMAIL
@@ -112,6 +117,7 @@ class ProductsTableSeeder extends Seeder
             'description' => '5000 Emails per month',
             'provider' => 'Postmark',
             'quantity' => 1,
+            'plan'=>'business',
             'price_per_unit' => 9,
             'frequency' => 'monthly',
             'category' => Category::EMAIL
@@ -134,6 +140,7 @@ class ProductsTableSeeder extends Seeder
             'description' => 'Retain upto 200GB - Daily Backup',
             'provider' => 'Digital Ocean',
             'quantity' => 1,
+            'plan'=>'business',
             'price_per_unit' => 1,
             'frequency' => 'daily',
             'category' => Category::BACKUP
@@ -144,6 +151,7 @@ class ProductsTableSeeder extends Seeder
             'description' => 'Retain upto 200GB - Weekly Backup',
             'provider' => 'Digital Ocean',
             'quantity' => 1,
+            'plan'=>'growth',
             'price_per_unit' => 4,
             'frequency' => 'weekly',
             'category' => Category::BACKUP
@@ -155,6 +163,7 @@ class ProductsTableSeeder extends Seeder
             'description' => 'Retain upto 200GB - Monthly Backup',
             'provider' => 'Digital Ocean',
             'quantity' => 1,
+            'plan'=>'hobby',
             'price_per_unit' => 10,
             'frequency' => 'monthly',
             'category' => Category::BACKUP
@@ -162,9 +171,10 @@ class ProductsTableSeeder extends Seeder
         ]);
         Product::create([
             'name' => 'SSL Pack 1',
-            'description' => 'Monthly renewal',
+            'description' => 'Monthly renewal - business',
             'provider' => 'Lets Encrypt',
             'quantity' => 1,
+            'plan'=>'business',
             'price_per_unit' => 5,
             'frequency' => 'monthly',
             'category' => Category::SSL
@@ -172,9 +182,21 @@ class ProductsTableSeeder extends Seeder
         ]);
         Product::create([
             'name' => 'SSL Pack 2',
-            'description' => 'Yearly renewal',
+            'description' => 'Monthly renewal - growth',
             'provider' => 'Lets Encrypt',
             'quantity' => 1,
+            'plan'=>'growth',
+            'price_per_unit' => 5,
+            'frequency' => 'monthly',
+            'category' => Category::SSL
+
+        ]);
+        Product::create([
+            'name' => 'SSL Pack 3',
+            'description' => 'Yearly renewal - hobby',
+            'provider' => 'Lets Encrypt',
+            'quantity' => 1,
+            'plan'=>'hobby',
             'price_per_unit' => 49,
             'frequency' => 'annually',
             'category' => Category::SSL
@@ -185,6 +207,7 @@ class ProductsTableSeeder extends Seeder
             'description' => 'Google Analytics Report - Notified Daily',
             'provider' => 'Google',
             'quantity' => 1,
+            'plan'=>'business',
             'price_per_unit' => 5,
             'frequency' => 'monthly',
             'category' => Category::ANALYTICS
@@ -194,6 +217,7 @@ class ProductsTableSeeder extends Seeder
             'name' => 'Analytics Report',
             'description' => 'Google Analytics Report - Notified Weekly',
             'provider' => 'Google',
+            'plan'=>'growth',
             'quantity' => 1,
             'price_per_unit' => 3,
             'frequency' => 'monthly',
@@ -205,6 +229,7 @@ class ProductsTableSeeder extends Seeder
             'description' => 'Google Analytics Report - Notified Monthly',
             'provider' => 'Google',
             'quantity' => 1,
+            'plan'=>'hobby',
             'price_per_unit' => 2,
             'frequency' => 'monthly',
             'category' => Category::ANALYTICS
@@ -215,6 +240,7 @@ class ProductsTableSeeder extends Seeder
             'description' => 'Pay As you go - Charged Per message',
             'provider' => 'Nexmo',
             'quantity' => 1,
+            'plan'=>'business',
             'price_per_unit' => 0.05,
             'frequency' => 'per_unit',
             'category' => Category::SMS

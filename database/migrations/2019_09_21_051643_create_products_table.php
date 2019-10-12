@@ -24,6 +24,7 @@ class CreateProductsTable extends Migration
             $table->float('price_per_unit');
             $table->string('category')->default(Category::HOSTING);
             $table->enum('frequency',['per_unit','daily','weekly','monthly','annually'])->default('monthly');
+            $table->enum('plan',['hobby','business','growth','none','common'])->default('none');
             $table->timestamps();
         });
     }

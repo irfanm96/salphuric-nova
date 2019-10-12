@@ -126,6 +126,8 @@
                                                 <h1 class="text-lg font-medium uppercase p-3 pb-0 text-center tracking-wide">
                                                     Hobby
                                                 </h1>
+                                                <h2 class="text-sm text-gray-500 text-center pb-6">€39 /mo</h2>
+
                                                 <!--                                                <h2 class="text-sm text-gray-500 text-center pb-6">FREE</h2>-->
 
                                                 Stripe offers everything needed to run an online business
@@ -261,11 +263,65 @@
                                                         </div>
                                                         <span class="text-gray-700 text-sm ml-3">GSuite</span>
                                                     </li>
+                                                    <li class="flex items-center">
+                                                        <div class=" rounded-full p-2 fill-current">
+                                                            <svg
+                                                                class="w-6 h-6 align-middle"
+                                                                width="24"
+                                                                height="24"
+                                                                viewBox="0 0 24 24"
+                                                                fill="none"
+                                                                stroke="gray"
+                                                                stroke-width="2"
+                                                                stroke-linecap="round"
+                                                                stroke-linejoin="round">
+                                                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                                                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                                                            </svg>
+                                                        </div>
+                                                        <span class="text-80 text-sm ml-3 line-through">Push Notifications</span>
+                                                    </li>
+                                                    <li class="flex items-center">
+                                                        <div class=" rounded-full p-2 fill-current">
+                                                            <svg
+                                                                class="w-6 h-6 align-middle"
+                                                                width="24"
+                                                                height="24"
+                                                                viewBox="0 0 24 24"
+                                                                fill="none"
+                                                                stroke="gray"
+                                                                stroke-width="2"
+                                                                stroke-linecap="round"
+                                                                stroke-linejoin="round">
+                                                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                                                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                                                            </svg>
+                                                        </div>
+                                                        <span class="text-80 text-sm ml-3 line-through">SMS</span>
+                                                    </li>
+                                                    <li class="flex items-center">
+                                                        <div class=" rounded-full p-2 fill-current">
+                                                            <svg
+                                                                class="w-6 h-6 align-middle"
+                                                                width="24"
+                                                                height="24"
+                                                                viewBox="0 0 24 24"
+                                                                fill="none"
+                                                                stroke="gray"
+                                                                stroke-width="2"
+                                                                stroke-linecap="round"
+                                                                stroke-linejoin="round">
+                                                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                                                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                                                            </svg>
+                                                        </div>
+                                                        <span class="text-80 text-sm ml-3 line-through">Bot Server</span>
+                                                    </li>
                                                 </ul>
                                             </div>
                                             <div class="block flex items-center p-8  uppercase">
                                                 <button
-                                                    class="mt-3 text-lg font-semibold bg-black w-full text-white rounded-lg px-6 py-3 block shadow-xl hover:bg-gray-700">
+                                                    class="mt-3 text-lg font-semibold bg-black w-full text-white rounded-lg px-6 py-3 block shadow-xl hover:bg-gray-700" @click.prevent="quickProject('hobby')">
                                                     Select
                                                 </button>
                                             </div>
@@ -416,13 +472,67 @@
                                                     </div>
                                                     <span class="text-gray-700 text-sm ml-3">GSuite</span>
                                                 </li>
+                                                <li class="flex items-center">
+                                                    <div class=" rounded-full p-2 fill-current">
+                                                        <svg
+                                                            class="w-6 h-6 align-middle"
+                                                            width="24"
+                                                            height="24"
+                                                            viewBox="0 0 24 24"
+                                                            fill="none"
+                                                            stroke="gray"
+                                                            stroke-width="2"
+                                                            stroke-linecap="round"
+                                                            stroke-linejoin="round">
+                                                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                                                        </svg>
+                                                    </div>
+                                                    <span class="text-80 text-sm ml-3 line-through">Push Notifications</span>
+                                                </li>
+                                                <li class="flex items-center">
+                                                    <div class=" rounded-full p-2 fill-current">
+                                                        <svg
+                                                            class="w-6 h-6 align-middle"
+                                                            width="24"
+                                                            height="24"
+                                                            viewBox="0 0 24 24"
+                                                            fill="none"
+                                                            stroke="gray"
+                                                            stroke-width="2"
+                                                            stroke-linecap="round"
+                                                            stroke-linejoin="round">
+                                                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                                                        </svg>
+                                                    </div>
+                                                    <span class="text-80 text-sm ml-3 line-through">SMS</span>
+                                                </li>
+                                                <li class="flex items-center">
+                                                    <div class=" rounded-full p-2 fill-current">
+                                                        <svg
+                                                            class="w-6 h-6 align-middle"
+                                                            width="24"
+                                                            height="24"
+                                                            viewBox="0 0 24 24"
+                                                            fill="none"
+                                                            stroke="gray"
+                                                            stroke-width="2"
+                                                            stroke-linecap="round"
+                                                            stroke-linejoin="round">
+                                                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                                                        </svg>
+                                                    </div>
+                                                    <span class="text-80 text-sm ml-3 line-through">Bot Server</span>
+                                                </li>
                                             </ul>
 
                                         </div>
 
                                         <div class="block flex items-center p-8  uppercase">
                                             <button
-                                                class="mt-3 text-lg font-semibold bg-black w-full text-white rounded-lg px-6 py-3 block shadow-xl hover:bg-gray-700">
+                                                class="mt-3 text-lg font-semibold bg-black w-full text-white rounded-lg px-6 py-3 block shadow-xl hover:bg-gray-700" @click.prevent="quickProject('growth')">
                                                 Select
                                             </button>
                                         </div>
@@ -630,10 +740,9 @@
 
                                             <div class="block flex items-center p-8  uppercase">
                                                 <button
-                                                    class="mt-3 text-lg font-semibold
-	bg-black w-full text-white rounded-lg
-	px-6 py-3 block shadow-xl hover:bg-gray-700"
-                                                >
+                                                    class="mt-3 text-lg font-semibold bg-black w-full text-white rounded-lg
+                                                    px-6 py-3 block shadow-xl hover:bg-gray-700"
+                                                    @click.prevent="quickProject('business')">
                                                     Select
                                                 </button>
                                             </div>
@@ -951,6 +1060,22 @@
         },
         methods: {
 
+            quickProject(plan){
+                var data={
+                    plan:plan,
+                    project:this.project
+                };
+                Nova.request().post('/nova-vendor/wizard/create-quick-project', data)
+                    .then(d => {
+                        this.$toasted.show('Congrats Your Project has been created!', {type: 'success'});
+                        setTimeout(function () {
+                            window.location.href="/dashboard";
+                        },1000)
+                    }).catch(e => {
+                    this.$toasted.show('Something went wrong ,Try Again later', {type: 'error'})
+                });
+            },
+
             fetchData() {
                 Nova.request().get('/nova-vendor/wizard/fetch')
                     .then(data => {
@@ -1008,6 +1133,9 @@
                 Nova.request().post('/nova-vendor/wizard/create-project', data)
                     .then(d => {
                         this.$toasted.show('Congrats Your Project has been created!', {type: 'success'})
+                        setTimeout(function () {
+                            window.location.href="/dashboard";
+                        },1000)
                     }).catch(e => {
                     this.$toasted.show('Something went wrong ,Try Again later', {type: 'error'})
 

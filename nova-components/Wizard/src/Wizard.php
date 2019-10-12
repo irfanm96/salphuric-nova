@@ -23,11 +23,12 @@ class Wizard extends Tool
      * Build the view that renders the navigation links for the tool.
      *
      * @return View
+     *
      */
     public function renderNavigation()
     {
-//        return false;
-        return view('wizard::navigation');
+        return false;
+//        return view('wizard::navigation');
     }
 
 }
