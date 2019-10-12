@@ -11,6 +11,8 @@ class ContactEmail extends Mailable
 {
     use Queueable, SerializesModels;
 
+    protected $data;
+
     /**
      * Create a new message instance.
      *
