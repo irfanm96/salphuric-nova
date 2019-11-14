@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Str;
+use Laravel\Nova\Actions\ActionResource;
 use Laravel\Nova\Events\ServingNova;
 use Laravel\Nova\Http\Middleware\RedirectIfAuthenticated;
 use Laravel\Nova\Http\Requests\NovaRequest;
@@ -118,6 +119,13 @@ class Nova
     public static $jsonVariables = [];
 
     /**
+     * The callback used to report Nova's exceptions.
+     *
+     * @var \Closure
+     */
+    public static $reportCallback;
+
+    /**
      * Indicates if Nova should register its migrations.
      *
      * @var bool
@@ -138,7 +146,7 @@ class Nova
      */
     public static function version()
     {
-        return '2.3.1';
+        return '2.7.1';
     }
 
     /**
@@ -199,6 +207,7 @@ class Nova
                 'singularLabel' => $resource::singularLabel(),
                 'authorizedToCreate' => $resource::authorizedToCreate($request),
                 'searchable' => $resource::searchable(),
+                'perPageOptions' => $resource::perPageOptions(),
             ], $resource::additionalInformation($request));
         })->values()->all();
     }
@@ -221,7 +230,7 @@ class Nova
      * Get the resources available for the given request.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return array
+     * @return \Illuminate\Support\Collection
      */
     public static function globallySearchableResources(Request $request)
     {
@@ -292,7 +301,8 @@ class Nova
             );
 
             if (is_subclass_of($resource, Resource::class) &&
-                ! (new ReflectionClass($resource))->isAbstract()) {
+                ! (new ReflectionClass($resource))->isAbstract() &&
+                ! (is_subclass_of($resource, ActionResource::class))) {
                 $resources[] = $resource;
             }
         }
@@ -835,6 +845,21 @@ class Nova
     }
 
     /**
+     * Register the callback used to set a custom Nova error reporter.
+     *
+     * @var \Closure
+     *
+     * @param \Closure $callback
+     * @return static
+     */
+    public static function report($callback)
+    {
+        static::$reportCallback = $callback;
+
+        return new static;
+    }
+
+    /**
      * Dynamically proxy static method calls.
      *
      * @param  string  $method
@@ -848,5 +873,17 @@ class Nova
         }
 
         return static::${$method};
+    }
+
+    /**
+     * Return a new instance of the configured ActionEvent.
+     *
+     * @return \Laravel\Nova\Actions\ActionEvent
+     */
+    public static function actionEvent()
+    {
+        return with(config('nova.actions.resource'), function ($class) {
+            return $class::newModel();
+        });
     }
 }

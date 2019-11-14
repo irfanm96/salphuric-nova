@@ -41,9 +41,9 @@ class Image extends File
         parent::__construct($name, $attribute, $disk, $storageCallback);
 
         $this->thumbnail(function () {
-            return $this->value ? Storage::disk($this->disk)->url($this->value) : null;
+            return $this->value ? Storage::disk($this->getStorageDisk())->url($this->value) : null;
         })->preview(function () {
-            return $this->value ? Storage::disk($this->disk)->url($this->value) : null;
+            return $this->value ? Storage::disk($this->getStorageDisk())->url($this->value) : null;
         });
     }
 

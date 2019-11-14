@@ -78,7 +78,7 @@ class GlobalSearch
                 $this->request->search
             );
 
-            if (count($models = $query->limit(5)->get()) > 0) {
+            if (count($models = $query->limit($resource::$globalSearchResults)->get()) > 0) {
                 $results[$resource] = $models;
             }
         }

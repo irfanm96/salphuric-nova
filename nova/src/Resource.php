@@ -79,6 +79,13 @@ abstract class Resource implements ArrayAccess, JsonSerializable, UrlRoutable
     public static $globallySearchable = true;
 
     /**
+     * The number of results to display in the global search.
+     *
+     * @var int
+     */
+    public static $globalSearchResults = 5;
+
+    /**
      * The per-page options used the resource index.
      *
      * @var array
@@ -311,6 +318,7 @@ abstract class Resource implements ArrayAccess, JsonSerializable, UrlRoutable
     public function serializeForIndex(NovaRequest $request, $fields = null)
     {
         return array_merge($this->serializeWithId($fields ?: $this->indexFields($request)), [
+            'actions' => $this->availableActions($request),
             'authorizedToView' => $this->authorizedToView($request),
             'authorizedToCreate' => $this->authorizedToCreate($request),
             'authorizedToUpdate' => $this->authorizedToUpdateForSerialization($request),
@@ -416,7 +424,7 @@ abstract class Resource implements ArrayAccess, JsonSerializable, UrlRoutable
      * Return the location to redirect the user after creation.
      *
      * @param  \Laravel\Nova\Http\Requests\NovaRequest  $request
-     * @param  \App\Nova\Resource  $resource
+     * @param  \Laravel\Nova\Resource  $resource
      * @return string
      */
     public static function redirectAfterCreate(NovaRequest $request, $resource)
@@ -428,7 +436,7 @@ abstract class Resource implements ArrayAccess, JsonSerializable, UrlRoutable
      * Return the location to redirect the user after update.
      *
      * @param  \Laravel\Nova\Http\Requests\NovaRequest  $request
-     * @param  \App\Nova\Resource  $resource
+     * @param  \Laravel\Nova\Resource  $resource
      * @return string
      */
     public static function redirectAfterUpdate(NovaRequest $request, $resource)

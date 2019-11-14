@@ -2,6 +2,8 @@
 
 namespace Laravel\Nova\Fields;
 
+use Illuminate\Support\Arr;
+
 class Select extends Field
 {
     /**
@@ -14,12 +16,12 @@ class Select extends Field
     /**
      * Set the options for the select menu.
      *
-     * @param  array|\Closure  $options
+     * @param  array|\Closure|\Illuminate\Support\Collection
      * @return $this
      */
     public function options($options)
     {
-        if (is_callable($options)) {
+        if (is_callable($options) || $this->isCallableArray($options)) {
             $options = $options();
         }
 
@@ -28,6 +30,16 @@ class Select extends Field
                 return is_array($label) ? $label + ['value' => $value] : ['label' => $label, 'value' => $value];
             })->values()->all(),
         ]);
+    }
+
+    protected function isCallableArray($options)
+    {
+        return $this->isCountable($options) && ! Arr::isAssoc($options) && method_exists($options[0], $options[1]);
+    }
+
+    protected function isCountable($options)
+    {
+        return is_countable($options) && count($options) === 2;
     }
 
     /**

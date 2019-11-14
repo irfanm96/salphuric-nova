@@ -6,6 +6,7 @@ use Illuminate\Routing\Controller;
 use Illuminate\Support\Arr;
 use Laravel\Nova\Http\Requests\NovaRequest;
 use Laravel\Nova\Nova;
+use Symfony\Component\HttpFoundation\BinaryFileResponse;
 
 class ScriptController extends Controller
 {
@@ -13,7 +14,7 @@ class ScriptController extends Controller
      * Serve the requested script.
      *
      * @param  \Laravel\Nova\Http\Requests\NovaRequest  $request
-     * @return \Illuminate\Http\Response
+     * @return \Symfony\Component\HttpFoundation\BinaryFileResponse
      *
      * @throws \Symfony\Component\HttpKernel\Exception\NotFoundHttpException
      */
@@ -23,9 +24,7 @@ class ScriptController extends Controller
 
         abort_if(is_null($path), 404);
 
-        return response(
-            file_get_contents($path),
-            200, ['Content-Type' => 'application/javascript']
-        );
+        return BinaryFileResponse::create($path, 200, ['Content-Type' => 'application/javascript'], false)
+                                 ->setAutoLastModified();
     }
 }

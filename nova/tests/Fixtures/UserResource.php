@@ -86,13 +86,14 @@ class UserResource extends Resource
 
             Text::make('Password')
                                 ->onlyOnForms()
-                                ->rules('required', 'string', 'min:6'),
+                                ->rules('required', 'string', 'min:8'),
 
             Text::make('Restricted')->canSee(function () {
                 return false;
             }),
 
             HasOne::make('Address', 'address', AddressResource::class),
+            HasOne::make('Profile', 'profile', ProfileResource::class)->nullable(),
             HasMany::make('Posts', 'posts', PostResource::class),
 
             BelongsToMany::make('Roles', 'roles', RoleResource::class)->referToPivotAs($_SERVER['nova.user.rolePivotName'] ?? null)->fields(function () {
