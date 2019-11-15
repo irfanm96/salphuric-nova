@@ -25,7 +25,8 @@
         "themsaid/nova-cashier-manager": "^0.2.1",
         "tightenco/nova-stripe": "^0.2.2",
         "vyuldashev/nova-permission": "^2.1",
-        "wildbit/swiftmailer-postmark": "^3.1"
+        "wildbit/swiftmailer-postmark": "^3.1",
+        "writingink/wink": "^0.1.0"
     },
     "require-dev": {
         "facade/ignition": "^1.4",
@@ -62,6 +63,9 @@
         "classmap": [
             "database/seeds",
             "database/factories"
+        ],
+        "files": [
+            "helper/helpers.php"
         ]
     },
     "autoload-dev": {
