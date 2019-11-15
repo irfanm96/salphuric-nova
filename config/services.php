@@ -36,4 +36,8 @@ return [
         'model' => env('CASHIER_MODEL')
     ],
 
+    'unsplash' => [
+        'key' => env('UNSPLASH_ACCESS_KEY', '3fde39f67608f84fc9e345a505198c55098b07c9b3f439e66a13f7baecf004e5'),
+    ],
+
 ];
