@@ -18,4 +18,12 @@ class BlogController extends Controller
             'posts' => $posts
         ]);
     }
+
+    public function show($uuid)
+    {
+        $post = WinkPost::findOrFail($uuid);
+        return view('blog.single', [
+            'post' => $post
+        ]);
+    }
 }
