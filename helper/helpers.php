@@ -4,11 +4,20 @@ function mediumish_path($path)
 {
     return asset('/themes/mediumis/' . $path);
 
-}function satrtbootstrap_path($path)
+}
+
+function satrtbootstrap_path($path)
 {
     return asset('/themes/start-bootstrap/' . $path);
 
 }
+
+function pretty_date($date){
+
+    return \Carbon\Carbon::parse($date)->format('Y-M-d @ H:m:i');
+
+}
+
 
 function gravatar($email, $size = 100)
 {

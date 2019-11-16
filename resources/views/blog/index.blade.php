@@ -13,7 +13,7 @@
             </a>
             <p class="post-meta">Posted by
                 <a href="#">{{$post->author->name}}</a>
-                on {{$post->publish_date}}</p>
+                on {{pretty_date($post->publish_date)}}</p>
         </div>
         <hr>
     @endforeach
