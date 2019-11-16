@@ -296,7 +296,7 @@
                 </div>
                 <div class="col-lg-4 col-md-6 box wow bounceInUp" data-wow-delay="0.1s" data-wow-duration="1.4s">
                     <div class="icon"><i class="ion-ios-barcode-outline"></i></div>
-                    <h4 class="title">]Testing</h4>
+                    <h4 class="title">Testing</h4>
                     <p class="description">We do quality assurance on software. We make sure that you get what our
                         clients pay for.. </p>
                 </div>
