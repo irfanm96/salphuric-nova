@@ -14,7 +14,7 @@ function satrtbootstrap_path($path)
 
 function pretty_date($date){
 
-    return \Carbon\Carbon::parse($date)->format('Y-M-d @ H:m:i');
+    return \Carbon\Carbon::parse($date)->format('Y-M-d');
 
 }
 
