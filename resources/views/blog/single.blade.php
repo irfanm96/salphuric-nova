@@ -26,7 +26,7 @@
             <div class="row">
                 <div class="col-lg-12 col-md-12 mx-auto">
 
-                    {{$post->body}}
+                    {!!  $post->body !!}}
                 </div>
             </div>
         </div>
