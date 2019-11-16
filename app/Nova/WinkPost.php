@@ -4,10 +4,13 @@ namespace App\Nova;
 
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\ID;
+use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Fields\Trix;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
 class WinkPost extends Resource
 {
+    public static $group = 'wink';
     /**
      * The model the resource corresponds to.
      *
@@ -41,7 +44,9 @@ class WinkPost extends Resource
     {
         return [
             ID::make()->sortable(),
-            Text::make('title')
+            Text::make('title'),
+            Text::make('excerpt'),
+            Trix::make('body'),
         ];
     }
 
