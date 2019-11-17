@@ -112,6 +112,9 @@ return [
         'salfade.com' => [
             'deploy_path' => '/home/forge/salfade.live',
             'user' => 'forge',
+            'branch' => 'live',
+            'stage' => 'live',
+
         ],
     ],
 
