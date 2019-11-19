@@ -2,6 +2,8 @@
 
 namespace Tests\Unit;
 
+use drupol\phpermutations\Generators\Permutations;
+use drupol\phpermutations\Iterators\Combinations;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
@@ -10,74 +12,38 @@ class ExampleTest extends TestCase
     protected $output = array();
 
 
-    function printCombination($arr, $n, $r)
-    {
-        // A temporary array to store
-        // all combination one by one
-        $data = Array();
-
-        // Print all combination using
-        // temprary array 'data[]'
-        $this->combinationUtil($arr, $n, $r,
-            0, $data, 0);
-    }
-
-    /* arr[] ---> Input Array
-    n ---> Size of input array
-    r ---> Size of a combination
-           to be printed
-    index ---> Current index in data[]
-    data[] ---> Temporary array to store
-                current combination
-    i ---> index of current element in arr[] */
-    function combinationUtil($arr, $n, $r,
-                             $index, $data, $i, $result = array())
-    {
-        // Current cobination
-        // is ready, print it
-        if ($index == $r) {
-            $temp = [];
-            for ($j = 0; $j < $r; $j++)
-                $temp[] = $data[$j];
-            $this->output[] = $temp;
-            return;
-        }
-
-        // When no more elements are
-        // there to put in data[]
-        if ($i >= $n)
-            return;
-
-        // current is included, put
-        // next at next location
-        $data[$index] = $arr[$i];
-        $this->combinationUtil($arr, $n, $r,
-            $index + 1,
-            $data, $i + 1);
-
-        // current is excluded, replace
-        // it with next (Note that i+1
-        // is passed, but index is not changed)
-        $this->combinationUtil($arr, $n, $r,
-            $index, $data, $i + 1);
-    }
-
     /** @test * */
     public function test_combination()
     {
 
         $RB = ['RB1', 'RB2', 'RB3', 'RB4'];
         $r = 2;
-        $n = sizeof($RB);
-        $this->printCombination($RB, $n, $r);
 
+        // Create the object
+
+
+        $permutations = new Combinations($RB, 3);
+
+        print_r($permutations->toArray());
+
+
+//        // Use a foreach loop.
+//        foreach ($permutations as $permutation) {// do stuff}
+//
+//            // Or get the whole array at once.
+//            print_r($permutations->toArray());
+//
+//        }
         $this->assertTrue(true);
+
+
     }
 
-    public function testBasicTest()
+    public
+    function testBasicTest()
     {
 
-       // Driver Code
+        // Driver Code
         $arr = array('RB1', 'RB2', 'RB3', 'RB4', 'RB5');
         $r = 4;
         $n = sizeof($arr);
@@ -120,7 +86,8 @@ class ExampleTest extends TestCase
     }
 
     /** @test * */
-    public function test_combo()
+    public
+    function test_combo()
     {
 
         $QB = ['QB1', 'QB2'];
@@ -132,14 +99,31 @@ class ExampleTest extends TestCase
 
 
         $data = array(
-            [['QB1'], ['QB2']],
-            [['RB1', 'RB2'], ['RB1', 'RB3'], ['RB1', 'RB4'], ['RB2', 'RB3'], ['RB2', 'RB4'], ['RB3', 'RB4']],
-            [['TE1'], ['TE2']]
+            (new Combinations($QB, 2))->toArray(),
+            (new Combinations($RB, 2))->toArray(),
+            (new Combinations($WR, 2))->toArray(),
+            (new Combinations($TE, 1))->toArray(),
+            (new Combinations($DEF, 1))->toArray(),
+//            [['RB1', 'RB2'], ['RB1', 'RB3'], ['RB1', 'RB4'], ['RB2', 'RB3'], ['RB2', 'RB4'], ['RB3', 'RB4']],
+//            [['TE1'], ['TE2']]
         );
-        $combos = $this->generate_combinations($data);
-        foreach ($combos as $combo) {
-            dump($this->array_flatten($combo));
+
+//        dump($data);
+
+        $teams = (new Permutations($data))->generator();
+//        $t = 0;
+//        $flatten = [];
+        foreach ($teams as $team) {
+            print_r($this->array_flatten($team));
+//            $t++;
         }
+//        print_r($t);
+
+
+//        $combos = $this->generate_combinations($data);
+//        foreach ($combos as $combo) {
+//            dump($this->array_flatten($combo));
+//        }
         $this->assertTrue(true);
     }
 
