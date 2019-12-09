@@ -11,6 +11,6 @@ class WinkPublish extends Model
 
     public function winkPost()
     {
-        return $this->belongsTo(WinkPost::class);
+        return $this->belongsTo(WinkPost::class, 'wink_post_id', 'id');
     }
 }

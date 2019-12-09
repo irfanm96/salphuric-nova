@@ -13,4 +13,9 @@ class WinkPost extends Model
         return $this->hasOne(WinkPublish::class);
     }
 
+    public  function author(){
+        return $this->belongsTo(WinkAuthor::class);
+
+    }
+
 }

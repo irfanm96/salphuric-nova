@@ -15,7 +15,7 @@ class CreateWinkPublishesTable extends Migration
     {
         Schema::create('wink_publishes', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('post_id');
+            $table->string('wink_post_id');
             $table->boolean('is_published')->default(false);
             $table->timestamps();
         });

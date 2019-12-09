@@ -25,7 +25,7 @@ class PublishPost extends Action
     {
         foreach ($models as $model) {
             $publish = WinkPublish::firstOrCreate([
-                'post_id' => $model->id
+                'wink_post_id' => $model->id
             ]);
 
             $publish->is_published = true;

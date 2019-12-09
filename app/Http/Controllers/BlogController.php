@@ -9,10 +9,22 @@ class BlogController extends Controller
 {
     public function index()
     {
-        $posts = WinkPost::with('tags')
-            ->live()
-            ->orderBy('publish_date', 'DESC')
-            ->simplePaginate(12);
+//        $posts = WinkPost::with('tags')
+//            ->live()
+//            ->publish()
+//            ->having('publish', function ($q) {
+//                $q->where('is_published', true);
+//            })
+//            ->orderBy('publish_date', 'DESC')
+//            ->simplePaginate(12);
+
+
+        $posts = \App\WinkPost::whereHas('publish', function ($q) {
+                        $q->where('is_published', true);
+                })
+                ->orderBy('publish_date', 'DESC')
+                ->simplePaginate(12);
+
 
         return view('blog.index', [
             'posts' => $posts
