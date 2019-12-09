@@ -125,6 +125,17 @@
 <!-- Custom scripts for this template -->
 <script src="{{ satrtbootstrap_path('js/clean-blog.min.js')}}"></script>
 
+<!-- Google Analytics -->
+<script>
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-122478602-1', 'auto');
+    ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+<!-- End Google Analytics -->
+
+
 </body>
+
 
 </html>
