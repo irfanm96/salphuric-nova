@@ -2,6 +2,7 @@
 
 namespace App\Nova;
 
+use App\Nova\Actions\PublishPost;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
@@ -91,6 +92,8 @@ class WinkPost extends Resource
      */
     public function actions(Request $request)
     {
-        return [];
+        return [
+            new PublishPost,
+        ];
     }
 }
