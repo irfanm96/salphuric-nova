@@ -874,7 +874,7 @@
 
             <div class="section-header">
                 <h3>Contact Us</h3>
-                <p>Queries or Proposals? Drop us a mail. We'd love to hear from you.</p>
+                <p>Do you have a Project? Need a Quote? Drop us a mail. We'd love to hear from you.</p>
             </div>
 
             <div class="row contact-info">
@@ -933,7 +933,7 @@
                         <div class="validation"></div>
                     </div>
                     <div class="text-center">
-                        <button type="submit" id="contact-form-submit">Send Message</button>
+                        <button type="submit" id="contact-form-submit">Get Quote</button>
                     </div>
                 </form>
             </div>
