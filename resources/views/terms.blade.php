@@ -259,6 +259,27 @@
             page on your Web site or within any context containing content or materials that may be interpreted as
             libelous, obscene or criminal, or which infringes, otherwise violates, or advocates the infringement or
             other violation of, any third party rights.</p>
+
+
+        <h2>Returns and Refunds Policy</h2>
+
+
+        <p>Thank you for shopping at Salfade. We issue refunds for digital products within 7 days of the original purchase of the product.</p>
+
+        <p>We recommend contacting us for assistance if you experience any issues receiving or downloading our products.</p>
+
+
+
+        <h4>Contact us</h4>
+
+        <p>If you have any questions about our Returns and Refunds Policy, please contact us:</p>
+
+        <ul>
+            <li>
+                <p>By email: admin@salfade.com</p>
+            </li>
+        </ul>
+
         <h2>Disclaimer</h2>
         <p>To the maximum extent permitted by applicable law, we exclude all representations, warranties and conditions
             relating to our website and the use of this website (including, without limitation, any warranties implied
